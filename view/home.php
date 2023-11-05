@@ -8,20 +8,19 @@
             data-scrollax-parent="true"
           >
             <div class="col-md-8 col-sm-12 text-center ftco-animate">
-              <span class="subheading">Welcome</span>
-              <h1 class="mb-4">The Best Coffee Testing Experience</h1>
+              <span class="subheading">Xin Chào</span>
+              <h1 class="mb-4">Trải Nghiệm Cà Phê Tốt nhất.</h1>
               <p class="mb-4 mb-md-5">
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
+              Không gian thoải mái, yên tĩnh để các lập trình viên có thể tập trung làm việc.
               </p>
               <p>
                 <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3"
-                  >Order Now</a
+                  >Đặt bàn ngay</a
                 >
                 <a
                   href="#"
                   class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3"
-                  >View Menu</a
+                  >Xem Menu</a
                 >
               </p>
             </div>
@@ -37,20 +36,19 @@
             data-scrollax-parent="true"
           >
             <div class="col-md-8 col-sm-12 text-center ftco-animate">
-              <span class="subheading">Welcome</span>
-              <h1 class="mb-4">Amazing Taste &amp; Beautiful Place</h1>
+              <span class="subheading">Xin Chào</span>
+              <h1 class="mb-4">Hương Vị Tuyệt Vời &amp; Không Gian Thoải Mái</h1>
               <p class="mb-4 mb-md-5">
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
+              Các dịch vụ hỗ trợ như phục vụ đồ uống, đồ ăn nhẹ,... để các lập trình viên có thể thoải mái làm việc mà không phải lo lắng về việc ăn uống.
               </p>
               <p>
                 <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3"
-                  >Order Now</a
+                  >Đặt Bàn Ngay</a
                 >
                 <a
                   href="#"
                   class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3"
-                  >View Menu</a
+                  >Xem Menu</a
                 >
               </p>
             </div>
@@ -66,20 +64,19 @@
             data-scrollax-parent="true"
           >
             <div class="col-md-8 col-sm-12 text-center ftco-animate">
-              <span class="subheading">Welcome</span>
-              <h1 class="mb-4">Creamy Hot and Ready to Serve</h1>
+              <span class="subheading">Xin Chào</span>
+              <h1 class="mb-4">Chất Lượng Internet Cực Tốt</h1>
               <p class="mb-4 mb-md-5">
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
+              Wifi tốc độ cao để các lập trình viên có thể truy cập internet và tải xuống các tài liệu, phần mềm cần thiết.
               </p>
               <p>
                 <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3"
-                  >Order Now</a
+                  >Đặt Bàn Ngay</a
                 >
                 <a
                   href="#"
                   class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3"
-                  >View Menu</a
+                  >Xem Menu</a
                 >
               </p>
             </div>
@@ -96,48 +93,47 @@
               <div class="col-md-4 d-flex ftco-animate">
                 <div class="icon"><span class="icon-phone"></span></div>
                 <div class="text">
-                  <h3>000 (123) 456 7890</h3>
+                  <h3>+84 934 789 999</h3>
                   <p>
-                    A small river named Duden flows by their place and supplies.
+                    Liên hệ Hotline để khiếu nại hoặc đóng góp ý kiến.
                   </p>
                 </div>
               </div>
               <div class="col-md-4 d-flex ftco-animate">
                 <div class="icon"><span class="icon-my_location"></span></div>
                 <div class="text">
-                  <h3>198 West 21th Street</h3>
+                  <h3>Khu Dân Cư Hoàng Quân, Cái Răng, Cần Thơ</h3>
                   <p>
-                    203 Fake St. Mountain View, San Francisco, California, USA
-                  </p>
+                  Đ. Số 22, Thường Thạnh, Cái Răng, Cần Thơ                  </p>
                 </div>
               </div>
               <div class="col-md-4 d-flex ftco-animate">
                 <div class="icon"><span class="icon-clock-o"></span></div>
                 <div class="text">
-                  <h3>Open Monday-Friday</h3>
-                  <p>8:00am - 9:00pm</p>
+                  <h3>Mở Cửa Tất Cả Các Ngày Trong Tuần.</h3>
+                  <p>8:30am - 23:00pm</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="book p-4">
-            <h3>Book a Table</h3>
+            <h3>Đặt Bàn</h3>
             <form action="#" class="appointment-form">
               <div class="d-md-flex">
                 <div class="form-group">
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="First Name"
+                    placeholder="Họ và Tên"
                   />
                 </div>
-                <div class="form-group ml-md-4">
+                <!-- <div class="form-group ml-md-4">
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Last Name"
+                    placeholder="Tên"
                   />
-                </div>
+                </div> -->
               </div>
               <div class="d-md-flex">
                 <div class="form-group">
@@ -148,7 +144,7 @@
                     <input
                       type="text"
                       class="form-control appointment_date"
-                      placeholder="Date"
+                      placeholder="Ngày"
                     />
                   </div>
                 </div>
@@ -158,12 +154,12 @@
                     <input
                       type="text"
                       class="form-control appointment_time"
-                      placeholder="Time"
+                      placeholder="Thời Gian"
                     />
                   </div>
                 </div>
                 <div class="form-group ml-md-4">
-                  <input type="text" class="form-control" placeholder="Phone" />
+                  <input type="text" class="form-control" placeholder="Số Điện Thoại" />
                 </div>
               </div>
               <div class="d-md-flex">
@@ -174,13 +170,13 @@
                     cols="30"
                     rows="2"
                     class="form-control"
-                    placeholder="Message"
+                    placeholder="Ghi Chú"
                   ></textarea>
                 </div>
                 <div class="form-group ml-md-4">
                   <input
                     type="submit"
-                    value="Appointment"
+                    value="Đặt Hẹn"
                     class="btn btn-white py-3 px-4"
                   />
                 </div>
@@ -199,19 +195,17 @@
       <div class="one-half ftco-animate">
         <div class="overlap">
           <div class="heading-section ftco-animate">
-            <span class="subheading">Discover</span>
-            <h2 class="mb-4">Our Story</h2>
+            <span class="subheading">Khám Phá</span><br>
+            <h2 class="mb-4">Câu Chuyện Của Chúng Tôi</h2>
           </div>
           <div>
             <p>
-              On her way she met a copy. The copy warned the Little Blind Text,
-              that where it came from it would have been rewritten a thousand
-              times and everything that was left from its origin would be the
-              word "and" and the Little Blind Text should turn around and return
-              to its own, safe country. But nothing the copy said could convince
-              her and so it didn’t take long until a few insidious Copy Writers
-              ambushed her, made her drunk with Longe and Parole and dragged her
-              into their agency, where they abused her for their.
+            Với mong muốn mang đến cho những người yêu công nghệ một không gian thư giãn và thoải mái, quán cà phê DEV coffee đã được thành lập vào năm 2023.
+
+Nội thất của quán được thiết kế theo phong cách cổ điện, với tông màu chủ đạo là nâu và đen. Quán có đầy đủ các loại đồ uống cà phê, trà, bánh ngọt và đồ ăn nhẹ.
+
+DEV coffee là địa điểm lý tưởng để học tập, làm việc hoặc đơn giản là thư giãn. Quán có wifi tốc độ cao, máy in và máy chiếu để phục vụ nhu cầu của khách hàng. Đội ngũ nhân viên của quán được đào tạo bài bản, luôn sẵn sàng phục vụ khách hàng một cách tận tình và chu đáo.
+
             </p>
           </div>
         </div>
@@ -1119,7 +1113,7 @@
       </div>
     </section>
 
-    <section class="ftco-appointment">
+    <!-- <section class="ftco-appointment">
       <div class="overlay"></div>
       <div class="container-wrap">
         <div class="row no-gutters d-md-flex align-items-center">
@@ -1195,4 +1189,4 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
