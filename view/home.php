@@ -1,6 +1,6 @@
 
 <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image: url(images/bg_1.jpg)">
+      <div class="slider-item" style="background-image: url(/view/images/bg_1.jpg)">
         <div class="overlay"></div>
         <div class="container">
           <div
@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="slider-item" style="background-image: url(images/bg_2.jpg)">
+      <div class="slider-item" style="background-image: url(/view/images/bg_2.jpg)">
         <div class="overlay"></div>
         <div class="container">
           <div
@@ -58,7 +58,7 @@
         </div>
       </div>
 
-      <div class="slider-item" style="background-image: url(images/bg_3.jpg)">
+      <div class="slider-item" style="background-image: url(/view/images/bg_3.jpg)">
         <div class="overlay"></div>
         <div class="container">
           <div
@@ -231,8 +231,7 @@
               <div class="media-body">
                 <h3 class="heading">Dễ Dàng Order</h3>
                 <p>
-                  Even the all-powerful Pointing has no control about the blind
-                  texts it is an almost unorthographic.
+                  <b>Order nhanh chóng và tiện lợi</b>
                 </p>
               </div>
             </div>
@@ -246,10 +245,8 @@
               </div>
               <div class="media-body">
                 <h3 class="heading">Giao Hàng Nhanh</h3>
-                <p>
-                  Even the all-powerful Pointing has no control about the blind
-                  texts it is an almost unorthographic.
-                </p>
+                <p><b>
+                Giao hàng ngay sau khi order.</b></p>
               </div>
             </div>
           </div>
@@ -261,10 +258,9 @@
                 <span class="flaticon-coffee-bean"></span>
               </div>
               <div class="media-body">
-                <h3 class="heading">Cà Phê Chất Lượng   </h3>
+                <h3 class="heading">Cà Phê Chất Lượng</h3>
                 <p>
-                  Even the all-powerful Pointing has no control about the blind
-                  texts it is an almost unorthographic.
+                <b>Cà phê chất lượng, thơm ngon khó cưỡng.</b>
                 </p>
               </div>
             </div>
