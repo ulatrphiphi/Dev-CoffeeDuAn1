@@ -4,10 +4,9 @@
         <div class="row mb-5">
           <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About Us</h2>
+              <h2 class="ftco-heading-2">Về chúng tôi</h2>
               <p>
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts.
+                Dev-coffee là nơi dành cho các lập trình viên ở Việt Nam. Được thành lập vào năm 2023, một nơi học tập và làm việc vô cùng thoải mái. 
               </p>
               <ul
                 class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
@@ -26,7 +25,7 @@
           </div>
           <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Recent Blog</h2>
+              <h2 class="ftco-heading-2">Bài viết gần đây</h2>
               <div class="block-21 mb-4 d-flex">
                 <a
                   class="blog-img mr-4"
@@ -83,12 +82,12 @@
           </div>
           <div class="col-lg-2 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Services</h2>
+              <h2 class="ftco-heading-2">Dịch vụ</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Cooked</a></li>
-                <li><a href="#" class="py-2 d-block">Deliver</a></li>
-                <li><a href="#" class="py-2 d-block">Quality Foods</a></li>
-                <li><a href="#" class="py-2 d-block">Mixed</a></li>
+                <li><a href="#" class="py-2 d-block">Món ăn</a></li>
+                <li><a href="#" class="py-2 d-block">Giao hàng</a></li>
+                <li><a href="#" class="py-2 d-block">Thực phẩm</a></li>
+                <li><a href="#" class="py-2 d-block">Dịch vụ tốt</a></li>
               </ul>
             </div>
           </div>
@@ -112,7 +111,7 @@
                   <li>
                     <a href="#"
                       ><span class="icon icon-envelope"></span
-                      ><span class="text">info@yourdomain.com</span></a
+                      ><span class="text">3some@gmail.com</span></a
                     >
                   </li>
                 </ul>
