@@ -6,7 +6,7 @@
       <div class="row slider-text justify-content-center align-items-center">
 
         <div class="col-md-7 col-sm-12 text-center ftco-animate">
-          <h1 class="mb-3 mt-5 bread">Services</h1>
+          <h1 class="mb-3 mt-5 bread">Dịch vụ</h1>
           <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Services</span></p>
         </div>
 
@@ -24,8 +24,8 @@
             <span class="flaticon-choices"></span>
           </div>
           <div class="media-body">
-            <h3 class="heading">Easy to Order</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+            <h3 class="heading">Dễ Dàng Order</h3>
+            <p><b>Order nhanh chóng và tiện lợi</b></p>
           </div>
         </div>
       </div>
@@ -35,8 +35,8 @@
             <span class="flaticon-delivery-truck"></span>
           </div>
           <div class="media-body">
-            <h3 class="heading">Fastest Delivery</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+            <h3 class="heading">Giao Hàng Nhanh</h3>
+            <p><b>Giao hàng ngay sau khi order.</b></p>
           </div>
         </div>
       </div>
@@ -46,8 +46,8 @@
             <span class="flaticon-coffee-bean"></span>
           </div>
           <div class="media-body">
-            <h3 class="heading">Quality Coffee</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+            <h3 class="heading">Cà Phê Chất Lượng</h3>
+            <p><b>Cà phê chất lượng, thơm ngon khó cưỡng.</b></p>
           </div>
         </div>
       </div>
