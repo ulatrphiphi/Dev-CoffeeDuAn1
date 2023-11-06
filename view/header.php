@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
+    <link rel="icon" type="image/png" href="/view/images/logo.png"/>
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"
       rel="stylesheet"
@@ -129,9 +129,9 @@
             </a>
 
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
-              <li><a class="dropdown-item" href="#">Đơn hàng của bạn</a></li>
-              <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+              <!-- <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
+              <li><a class="dropdown-item" href="#">Đơn hàng của bạn</a></li> -->
+              <li><a class="dropdown-item" href="index.php?act=login">Đăng Nhập</a></li>
             </ul>
           </div>
         </div>
