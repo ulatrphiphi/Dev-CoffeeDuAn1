@@ -82,7 +82,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="index.php?act=listsp" class="nav-link">
+              <a href="index.php?act=listpro" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Danh sách sản phẩm</p>
               </a>
@@ -95,16 +95,16 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
-              Quản lý bài viết
+              Quản lý danh mục
               <i class="fas fa-angle-left right"></i>
               <span class="badge badge-info right"></span>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/admin/?pages=posts&action=list" class="nav-link">
+              <a href="index.php?act=listcate" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Danh sách</p>
+                <p>Danh sách danh mục</p>
               </a>
             </li>
 
@@ -114,14 +114,14 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
-              Khách Hàng
+              Quản lí tài khoản
               <i class="fas fa-angle-left right"></i>
               <span class="badge badge-info right"></span>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/admin/?pages=users&action=list" class="nav-link">
+              <a href="index.php?act=listuser" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Danh sách Khách Hàng</p>
               </a>
@@ -133,19 +133,18 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
-              Quán lý Đơn Hàng
+              Quán lý đơn hàng
               <i class="fas fa-angle-left right"></i>
               <span class="badge badge-info right"></span>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/admin/?pages=orders&action=list" class="nav-link">
+              <a href="index.php?act=listorder" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Danh sách Đơn Hàng</p>
               </a>
             </li>
-
           </ul>
         </li>
         
