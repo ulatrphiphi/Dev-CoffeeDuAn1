@@ -4,7 +4,7 @@ function insert_categories($name)
     $sql = "insert into categories(name) values('$name ')";
     pdo_execute($sql);
 }
-function delete_categories($id,)
+function delete_categories($id)
 {
     $sql = "delete from categories where id =" . $id;
     pdo_execute($sql);
