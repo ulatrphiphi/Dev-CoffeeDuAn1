@@ -59,81 +59,46 @@ session_start();
               case "dashboard":
                 include "dashboard.php";
                 break;
-              case "listsp":
+                // Products
+              case "listpro":
                 include "modules/products/list.php";
                 break;
-              case "addsp":
+              case "addpro":
                 include "modules/products/add.php";
                 break;
-              case "editsp":
+              case "editpro":
                 include "modules/products/edit.php";
                 break;
-             
-
-                //       case "list":
-                //         include "modules/products/list.php";
-                //         break;
-                //       case "add":
-                //         include "modules/products/add.php";
-                //         break;
-                //       case "edit":
-                //         include "modules/products/edit.php";
-                //         break;
-
-                //       default:
-                //         include "modules/products/list.php";
-                //         break;
-                //     }
-                //     break;
-                //   case "posts":
-                //     switch ($_GET["action"]) {
-                //       case "list":
-                //         include "modules/posts/list.php";
-                //         break;
-                //       case "add":
-                //         include "modules/posts/add.php";
-                //         break;
-                //       case "edit":
-                //         include "modules/posts/edit.php";
-                //         break;
-
-                //       default:
-                //         include "modules/posts/list.php";
-                //         break;
-                //     }
-                //     break;
-                //   case "orders":
-                //     switch ($_GET["action"]) {
-                //       case "list":
-                //         include "modules/orders/list.php";
-                //         break;
-                //       case "add":
-                //         include "modules/orders/add.php";
-                //         break;
-                //       case "edit":
-                //         include "modules/orders/edit.php";
-                //         break;
-
-                //       default:
-                //         include "modules/orders/list.php";
-                //         break;
-                //     }
-                //     break;
-                //   case "users":
-                //     switch ($_GET["action"]) {
-                //       case "list":
-                //         include "modules/users/list.php";
-                //         break;
-                //       case "add":
-                //         include "modules/users/add.php";
-                //         break;
-                //       case "edit":
-                //         include "modules/users/edit.php";
-                //         break;
-                //     }
-                //   default:
-                //     include "dashboard.php";
-                //     break;
+                // Categories
+              case "listcate":
+                include "modules/categories/list.php";
+                break;
+              case "addcate":
+                include "modules/categories/add.php";
+                break;
+              case "editcate":
+                include "modules/categories/edit.php";
+                break;
+                // User
+              case "listuser":
+                include "modules/users/list.php";
+                break;
+              case "adduser":
+                include "modules/users/add.php";
+                break;
+              case "edituser":
+                include "modules/users/edit.php";
+                break;
+                // Order
+              case "listorder":
+                include "modules/orders/list.php";
+                break;
+              case "addorder":
+                include "modules/orders/add.php";
+                break;
+              case "editorder":
+                include "modules/orders/edit.php";
+                break;
             }
           } else {
             include "dashboard.php";
