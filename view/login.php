@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,18 +35,18 @@
         <div class="limiter">
             <div class="container-login100 " style="background-image: url('/view/images/bg_2.jpg');">
                 <div class="wrap-login100">
-                    <form class="login100-form validate-form">
+                    <form class="login100-form validate-form" action="index.php?act=login" method="POST">
                         <span class="login100-form-logo">
                            <a href="index.php"><img src="/view/images/logo.png" width="160px" alt=""></a>
                             <!-- <i class="zmdi zmdi-landscape"></i> -->
                         </span>
-
+                        
                         <span class="login100-form-title p-b-34 p-t-27">
                             Đăng Nhập
                         </span>
 
                         <div class="wrap-input100 validate-input" data-validate="Enter username">
-                            <input class="input100" type="text" name="username" placeholder="Tên đăng Nhập">
+                            <input class="input100" type="text" name="user" placeholder="Tên đăng Nhập">
                             <span class="focus-input100" data-placeholder="&#xf207;"></span>
                         </div>
 
@@ -62,7 +63,7 @@
                         </div>
 
                         <div class="container-login100-form-btn ">
-                      <input type="submit" value="Đăng Nhập" class="loginsubmit"> 
+                      <input type="submit" value="Đăng Nhập" class="loginsubmit" name="login"> 
                                
                             
                         </div>

@@ -34,7 +34,7 @@
         <div class="limiter">
             <div class="container-login100 " style="background-image: url('/view/images/bg_2.jpg');">
                 <div class="wrap-login100">
-                    <form class="login100-form validate-form">
+                    <form class="login100-form validate-form" method="POST" action="index.php?act=signup" >
                         <span class="login100-form-logo">
                            <a href="index.php"><img src="/view/images/logo.png" width="160px" alt=""></a>
                             <!-- <i class="zmdi zmdi-landscape"></i> -->
@@ -59,10 +59,10 @@
                             <span class="focus-input100" data-placeholder="&#xf191;"></span>
                         </div>
 
-                        <div class="wrap-input100 validate-input" data-validate="Comfirm password">
+                        <!-- <div class="wrap-input100 validate-input" data-validate="Comfirm password">
                             <input class="input100" type="password" name="cpass" placeholder="Nhập lại mật Khẩu">
                             <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                        </div>
+                        </div> -->
 
                         <div class="contact100-form-checkbox">
                             <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
@@ -72,17 +72,12 @@
                         </div>
 
                         <div class="container-login100-form-btn ">
-                      <input type="submit" value="Đăng ký" class="loginsubmit"> 
+                      <input type="submit" value="Đăng ký" class="loginsubmit" name="signup"> 
                                
                             
                         </div>
 
-                        <!-- <div class="text-center p-t-90 txt1">
-                            <a class="txt1" href="#">
-                                Quên Mật Khẩu
-                            </a> | <a class="txt1" href="index.php?act=signup">Đăng kí tài khoản</a>
-                        </div>
-                    </form> -->
+                    </form>
                 </div>
             </div>
         </div>
