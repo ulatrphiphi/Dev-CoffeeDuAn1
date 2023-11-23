@@ -1,7 +1,7 @@
 <?php
-session_start();
+include "../model/pdo.php";
+include "../model/categories.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,13 +71,39 @@ session_start();
                 break;
                 // Categories
               case "listcate":
+                $listcategories = load_all_categories();
                 include "modules/categories/list.php";
                 break;
               case "addcate":
+                if (isset($_POST['addnew']) && ($_POST['addnew'])) {
+                  $name = $_POST['name'];
+                  insert_categories($name);
+                  $alert = '<p style="color:red;">Thêm thành công!</p>';
+                }
                 include "modules/categories/add.php";
                 break;
               case "editcate":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                  $cate = load_one_categories($_GET['id']);
+                }
                 include "modules/categories/edit.php";
+                break;
+              case 'updatecate':
+                if (isset($_POST['update']) && ($_POST['update'])) {
+                  $name = $_POST['name'];
+                  $id = $_POST['id'];
+                  update_categories($id, $name);
+                  $alert = "Cập nhật thành công!";
+                }
+                $listcategories = load_all_categories();
+                include 'modules/categories/list.php';
+                break;
+              case 'deletecate':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                  delete_categories($_GET['id']);
+                }
+                $listcategories = load_all_categories();
+                include 'modules/categories/list.php';
                 break;
                 // User
               case "listuser":
