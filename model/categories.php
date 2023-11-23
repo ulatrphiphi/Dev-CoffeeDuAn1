@@ -9,9 +9,20 @@ function delete_categories($id)
     $sql = "update categories set status = 0 where id =" . $id;
     pdo_execute($sql);
 }
+function restore_categories($id)
+{
+    $sql = "update categories set status = 1 where id =" . $id;
+    pdo_execute($sql);
+}
 function load_all_categories()
 {
     $sql = "select * from categories where status = 1 order by id desc";
+    $list_categories = pdo_query($sql);
+    return $list_categories;
+}
+function load_deleted_categories()
+{
+    $sql = "select * from categories where status = 0 order by id desc";
     $list_categories = pdo_query($sql);
     return $list_categories;
 }
