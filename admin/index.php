@@ -105,6 +105,17 @@ include "../model/categories.php";
                 $listcategories = load_all_categories();
                 include 'modules/categories/list.php';
                 break;
+              case 'storagecate':
+                $listdeletedcategories = load_deleted_categories();
+                include "modules/categories/storage.php";
+                break;
+                case 'restorecate':
+                  if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    restore_categories($_GET['id']);
+                  }
+                  $listdeletedcategories = load_deleted_categories();
+                include "modules/categories/storage.php";
+                  break; 
                 // User
               case "listuser":
                 include "modules/users/list.php";
