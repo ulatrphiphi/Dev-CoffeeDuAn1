@@ -50,9 +50,10 @@
           </tbody>
         </table>
 
-        <div class="card-body">
-        </div>
 
       </div>
-      <!-- /.card-body -->
+      <div class="card-footer">
+  <a href="index.php?act=storagecate"><button type="submit" class="btn btn-danger" style="float:right;">Xem danh mục đã xóa</button></a>
+</div>
+
     </div>
