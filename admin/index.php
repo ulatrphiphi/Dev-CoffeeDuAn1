@@ -65,12 +65,12 @@ include '../model/users.php';
                 break;
                 // Products
               case "listpro":
-                  if (isset($_POST['listok']) && ($_POST['listok'])) {
-                    $kyw = $_POST['kyw'];
-                    $iddm = $_POST['categories_id'];
+                if (isset($_POST['listok']) && ($_POST['listok'])) {
+                  $kyw = $_POST['kyw'];
+                  $iddm = $_POST['categories_id'];
                 } else {
-                    $kyw = '';
-                    $iddm = 0;
+                  $kyw = '';
+                  $iddm = 0;
                 }
                 $list_categories = load_all_categories();
                 $listproducts = load_all_products();
@@ -78,32 +78,32 @@ include '../model/users.php';
                 break;
 
               case "addpro":
-                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                  $iddm = $_POST['iddm'];
-                  $tensp = $_POST['tensp'];
-                  $giasp = $_POST['giasp'];
-                  // $mota = $_POST['mota'];
-                  $hinh = $_FILES['hinh']['name'];
-                  $target_dir = "../upload/";
-                  $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
-                  if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                if (isset($_POST['addnew']) && ($_POST['addnew'])) {
+                  $categories_id = $_POST['categories_id'];
+                  $name = $_POST['name'];
+                  $price = $_POST['price'];
+                  $img = $_FILES['img']['name'];
+                  $detail = $_POST['detail'];
+                  $target_dir = "./uploads/";
+                  $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                  if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
                   } else {
                   }
                   // insert_products($iddm, $tensp, $giasp, $hinh, $mota);
-                  insert_products($iddm, $tensp, $giasp, $hinh, $mota);
+                  insert_products($categories_id, $name, $price, $img, $detail);
                   $thongbao = "Thêm thành công";
                 }
                 $list_categories = load_all_categories();
                 include "modules/products/add.php";
                 break;
 
-              // case "editpro":
-              //   if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-              //     $products = load_one_products($_GET['id']);
-              //   }
-              //   $list_categories = load_all_categories();
-              //   include "modules/products/edit.php";
-              //   break;
+                // case "editpro":
+                //   if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                //     $products = load_one_products($_GET['id']);
+                //   }
+                //   $list_categories = load_all_categories();
+                //   include "modules/products/edit.php";
+                //   break;
 
               case 'editpro':
                 if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
@@ -125,12 +125,23 @@ include '../model/users.php';
                 include "modules/products/edit.php";
                 break;
 
-              case "delpro":
+              case "deletepro":
                 if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                   delete_products($_GET['id']);
-              }
-              $listsanpham = load_all_products();
-                include "modules/products/edit.php";
+                }
+                $listproducts = load_all_products();
+                include "modules/products/list.php";
+                break;
+              case "storgepro":
+                $listdeletedproducts = load_deleted_products();
+                include "modules/products/storage.php";
+                break;
+              case 'restorepro':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                  restore_products($_GET['id']);
+                }
+                $listdeletedproducts = load_deleted_products();
+                include "modules/products/storage.php";
                 break;
                 // Categories
               case "listcate":
@@ -167,13 +178,13 @@ include '../model/users.php';
                 $listdeletedcategories = load_deleted_categories();
                 include "modules/categories/storage.php";
                 break;
-                case 'restorecate':
-                  if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                    restore_categories($_GET['id']);
-                  }
-                  $listdeletedcategories = load_deleted_categories();
+              case 'restorecate':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                  restore_categories($_GET['id']);
+                }
+                $listdeletedcategories = load_deleted_categories();
                 include "modules/categories/storage.php";
-                  break; 
+                break;
                 // User
               case "listuser":
                 $listuser=loadall_user();
