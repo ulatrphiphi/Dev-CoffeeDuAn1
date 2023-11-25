@@ -1,30 +1,9 @@
 
-<?php
-
-if (!empty($_POST)) {
-    $error = [];
-    if (empty($_POST['user'])) {
-        $error['user']['required'] = 'Tên đăng nhập không được để trống';
-    }
-
-    if (empty($_POST['pass'])) {
-        $error['pass']['required'] = 'Mật khẩu không được để trống';
-    } else {
-        if (strlen($_POST['pass']) < 5) {
-            $error['pass']['invaild'] = 'Mật khẩu phải có ít nhất 5 ký tự';
-        }
-    }
-
-}
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Đăng Nhập</title>
+    <title>Quên mật khẩu</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -56,49 +35,42 @@ if (!empty($_POST)) {
         <div class="limiter">
             <div class="container-login100 " style="background-image: url('/view/images/bg_2.jpg');">
                 <div class="wrap-login100">
-                    <form class="login100-form validate-form" action="index.php?act=login" method="POST">
+                    <form class="login100-form validate-form" action="" method="POST">
                         <span class="login100-form-logo">
                            <a href="index.php"><img src="/view/images/logo.png" width="160px" alt=""></a>
                             <!-- <i class="zmdi zmdi-landscape"></i> -->
                         </span>
-                        
+                        <?php
+                            if(isset($_POST['submit'])){
+                                $error = [];
+                                $email = $_POST['email'];
+                                if($email == ''){
+                                    $error['email'] = "Không được để trống";
+                                }
+                                if(empty($error)){
+                                    $result = $user -> checkemail($email);
+                                    $code = substr(rand(0,999999),0,6);
+                                    $title = "Quên mật khẩu";
+                                    $content = "Mã xác nhận của bạn là: <span style='color:red'>".$code."</span>";
+                                    $mail->sendMail($title, $content, $email);
+
+                                    $_SESSION['mail'] = $email;
+                                    $_SESSION['code'] = $code;
+                                    header('LOCATION: verification.php');
+                                }
+                            }
+                        ?>
                         <span class="login100-form-title p-b-34 p-t-27">
-                            Đăng Nhập
+                            Quên mật khẩu
                         </span>
 
-                        <div class="wrap-input100 validate-input" data-validate="Enter username">
-                            <input class="input100" type="text" name="user" placeholder="Tên đăng Nhập">
-                            <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                        </div>
-                        <?php echo !empty($error['user']['required']) ? '<p style="color: red;">' . $error['user']['required'] : '';
-                                '</p>' ?>
-
-                        <div class="wrap-input100 validate-input" data-validate="Enter password">
-                            <input class="input100" type="password" name="pass" placeholder="Mật Khẩu">
-                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                        </div>
-                        <?php echo !empty($error['pass']['required']) ? '<p style="color: red;">' . $error['pass']['required'] : '';
-                                '</p>' ?>
-                            <?php echo !empty($error['pass']['invaild']) ? '<p style="color: red;">' . $error['pass']['invaild'] : '';
-                                '</p>' ?>
-
-                        <div class="contact100-form-checkbox">
-                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                            <label class="label-checkbox100" for="ckb1">
-                                Nhớ mật khẩu
-                            </label>
+                        <div class="wrap-input100 validate-input" data-validate="Enter Email">
+                            <input class="input100" type="email" name="email" placeholder="Nhập email">
+                            <span style="color: red;"><? if (isset($error['email'])) echo $error['email']?></span>
                         </div>
 
                         <div class="container-login100-form-btn ">
-                      <input type="submit" value="Đăng Nhập" class="loginsubmit" name="login"> 
-                               
-                            
-                        </div>
-
-                        <div class="text-center p-t-90 txt1">
-                            <a class="txt1" href="index.php?act=forgetpass">
-                                Quên Mật Khẩu
-                            </a> | <a class="txt1" href="index.php?act=signup">Đăng kí tài khoản</a>
+                            <input type="submit" value="Gửi yêu cầu" class="loginsubmit" name="submit"> 
                         </div>
                     </form>
                 </div>

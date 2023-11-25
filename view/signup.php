@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,21 +49,23 @@
                             <input class="input100" type="text" name="username" placeholder="Tên đăng Nhập">
                             <span class="focus-input100" data-placeholder="&#xf207;"></span>
                         </div>
+                        
 
                         <div class="wrap-input100 validate-input" data-validate="Enter email">
                             <input class="input100" type="text" name="email" placeholder="Email của bạn">
                             <span class="focus-input100" data-placeholder="&#xf207;"></span>
                         </div>
+                        
 
                         <div class="wrap-input100 validate-input" data-validate="Enter password">
                             <input class="input100" type="password" name="pass" placeholder="Mật Khẩu">
                             <span class="focus-input100" data-placeholder="&#xf191;"></span>
                         </div>
 
-                        <!-- <div class="wrap-input100 validate-input" data-validate="Comfirm password">
+                        <div class="wrap-input100 validate-input" data-validate="Comfirm password">
                             <input class="input100" type="password" name="cpass" placeholder="Nhập lại mật Khẩu">
                             <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                        </div> -->
+                        </div>
 
                         <div class="contact100-form-checkbox">
                             <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
@@ -72,7 +75,7 @@
                         </div>
 
                         <div class="container-login100-form-btn ">
-                      <input type="submit" value="Đăng ký" class="loginsubmit" name="signup"> 
+                      <input type="submit" value="Đăng ký" class="loginsubmit" id="signup" name="signup"> 
                                
                             
                         </div>

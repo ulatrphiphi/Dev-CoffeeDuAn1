@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -78,9 +82,9 @@
             <li class="nav-item">
               <a href="index.php?act=services" class="nav-link">Dịch vụ</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="index.php?act=blog" class="nav-link">Bài Viết</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="index.php?act=about" class="nav-link">Về chúng tôi</a>
             </li>
@@ -124,16 +128,35 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
+            <?php
+            if(isset($_SESSION['user'])){
+                extract($_SESSION['user']);
+            ?>
+           
               <span class="icon icon-user"></span>
-              Xin chào, <span class="text-header"></span>
+              <?=$user?><span class="text-header"></span>
             </a>
-
+            
             <ul class="dropdown-menu">
               <!-- <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
               <li><a class="dropdown-item" href="#">Đơn hàng của bạn</a></li> -->
-              <li><a class="dropdown-item" href="index.php?act=login">Đăng Nhập</a></li>
+              <li><a class="dropdown-item" href="index.php?act=edit_user">Chỉnh Sửa Tài Khoản</a></li>
+              <li><a class="dropdown-item" href="index.php?act=order_user">Đơn Hàng của Tôi</a></li>
+              <li><a class="dropdown-item" href="index.php?act=logout">Đăng Xuất</a></li>
             </ul>
+            <? }else{ ?>
+              <span class="icon icon-user"></span>
+               <span class="text-header"></span>
+            </a>
+            
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.php?act=login">Đăng nhập</a></li>
+              <li><a class="dropdown-item" href="index.php?act=signup">Đăng ký</a></li>
+              
+            </ul>
+          
           </div>
+      <? } ?>
         </div>
       </div>
     </nav>

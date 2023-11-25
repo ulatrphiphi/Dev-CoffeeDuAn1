@@ -1,24 +1,4 @@
 
-<?php
-
-if (!empty($_POST)) {
-    $error = [];
-    if (empty($_POST['user'])) {
-        $error['user']['required'] = 'Tên đăng nhập không được để trống';
-    }
-
-    if (empty($_POST['pass'])) {
-        $error['pass']['required'] = 'Mật khẩu không được để trống';
-    } else {
-        if (strlen($_POST['pass']) < 5) {
-            $error['pass']['invaild'] = 'Mật khẩu phải có ít nhất 5 ký tự';
-        }
-    }
-
-}
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,49 +36,52 @@ if (!empty($_POST)) {
         <div class="limiter">
             <div class="container-login100 " style="background-image: url('/view/images/bg_2.jpg');">
                 <div class="wrap-login100">
-                    <form class="login100-form validate-form" action="index.php?act=login" method="POST">
+                <?php 
+                if(isset($_SESSION['user'])&&(is_array($_SESSION['user']))){
+                    extract($_SESSION['user']);
+                }
+                ?>
+                    <form class="login100-form validate-form" action="index.php?act=home" method="POST">
                         <span class="login100-form-logo">
                            <a href="index.php"><img src="/view/images/logo.png" width="160px" alt=""></a>
                             <!-- <i class="zmdi zmdi-landscape"></i> -->
                         </span>
                         
                         <span class="login100-form-title p-b-34 p-t-27">
-                            Đăng Nhập
+                            Chỉnh sửa tài khoản
                         </span>
 
                         <div class="wrap-input100 validate-input" data-validate="Enter username">
-                            <input class="input100" type="text" name="user" placeholder="Tên đăng Nhập">
+                            <input class="input100" type="text" name="user" value="<?=$user?>">
                             <span class="focus-input100" data-placeholder="&#xf207;"></span>
                         </div>
-                        <?php echo !empty($error['user']['required']) ? '<p style="color: red;">' . $error['user']['required'] : '';
-                                '</p>' ?>
-
+                        
                         <div class="wrap-input100 validate-input" data-validate="Enter password">
-                            <input class="input100" type="password" name="pass" placeholder="Mật Khẩu">
+                            <input class="input100" type="password" name="pass" value="<?=$pass?>">
                             <span class="focus-input100" data-placeholder="&#xf191;"></span>
                         </div>
-                        <?php echo !empty($error['pass']['required']) ? '<p style="color: red;">' . $error['pass']['required'] : '';
-                                '</p>' ?>
-                            <?php echo !empty($error['pass']['invaild']) ? '<p style="color: red;">' . $error['pass']['invaild'] : '';
-                                '</p>' ?>
 
-                        <div class="contact100-form-checkbox">
-                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                            <label class="label-checkbox100" for="ckb1">
-                                Nhớ mật khẩu
-                            </label>
+                        <div class="wrap-input100 validate-input" data-validate="Enter password">
+                            <input class="input100" type="email" name="email" value="<?=$email?>">
+                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
                         </div>
 
+                        <div class="wrap-input100 validate-input" data-validate="Enter password">
+                            <input class="input100" type="text" name="address" value="<?=$address?>">
+                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Enter password">
+                            <input class="input100" type="text" name="tel" value="<?=$tel?>">
+                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                        </div>
+                        
+                        
                         <div class="container-login100-form-btn ">
-                      <input type="submit" value="Đăng Nhập" class="loginsubmit" name="login"> 
+                        <input type="hidden" name="id" value="<?=$id?>">
+                         <input type="submit" value="Cập nhật" class="loginsubmit" name="update"> 
                                
                             
-                        </div>
-
-                        <div class="text-center p-t-90 txt1">
-                            <a class="txt1" href="index.php?act=forgetpass">
-                                Quên Mật Khẩu
-                            </a> | <a class="txt1" href="index.php?act=signup">Đăng kí tài khoản</a>
                         </div>
                     </form>
                 </div>
