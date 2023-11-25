@@ -1,6 +1,8 @@
 <?php
 include "../model/pdo.php";
 include "../model/categories.php";
+include "../model/products.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,12 +63,71 @@ include "../model/categories.php";
                 break;
                 // Products
               case "listpro":
+                  if (isset($_POST['listok']) && ($_POST['listok'])) {
+                    $kyw = $_POST['kyw'];
+                    $iddm = $_POST['categories_id'];
+                } else {
+                    $kyw = '';
+                    $iddm = 0;
+                }
+                $list_categories = load_all_categories();
+                $listproducts = load_all_products();
                 include "modules/products/list.php";
                 break;
+
               case "addpro":
+                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                  $iddm = $_POST['iddm'];
+                  $tensp = $_POST['tensp'];
+                  $giasp = $_POST['giasp'];
+                  // $mota = $_POST['mota'];
+                  $hinh = $_FILES['hinh']['name'];
+                  $target_dir = "../upload/";
+                  $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                  if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                  } else {
+                  }
+                  // insert_products($iddm, $tensp, $giasp, $hinh, $mota);
+                  insert_products($iddm, $tensp, $giasp, $hinh, $mota);
+                  $thongbao = "Thêm thành công";
+                }
+                $list_categories = load_all_categories();
                 include "modules/products/add.php";
                 break;
-              case "editpro":
+
+              // case "editpro":
+              //   if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+              //     $products = load_one_products($_GET['id']);
+              //   }
+              //   $list_categories = load_all_categories();
+              //   include "modules/products/edit.php";
+              //   break;
+
+              case 'editpro':
+                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                  $iddm = $_POST['iddm'];
+                  $tensp = $_POST['tensp'];
+                  $giasp = $_POST['giasp'];
+                  $mota = $_POST['mota'];
+                  $hinh = $_FILES['hinh']['name'];
+                  $target_dir = "../upload/";
+                  $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                  if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                  } else {
+                  }
+                  update_products($id, $iddm, $tensp, $giasp, $mota, $hinh);
+                  $thongbao = "Cập nhật thành công";
+                }
+                $list_categories = load_all_categories();
+                $listproducts = load_all_products();
+                include "modules/products/edit.php";
+                break;
+
+              case "delpro":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                  delete_products($_GET['id']);
+              }
+              $listsanpham = load_all_products();
                 include "modules/products/edit.php";
                 break;
                 // Categories
