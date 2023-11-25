@@ -1,36 +1,40 @@
 <?php
 
-function insert_products($iddm, $tensp, $giasp, $hinh, $mota ){
-    $sql="insert into products(categories_id,name,price,img,detail) values('$iddm', '$tensp', '$giasp', '$hinh', '$mota' )";
+function insert_products($categories_id, $name, $price, $img, $detail ){
+    $sql="insert into products(categories_id,name,price,img,detail) values('$categories_id', '$name', '$price', '$img', '$detail' )";
     pdo_execute($sql);
 }
 function delete_products($id){
-    $sql="delete from products where id=".$id;
+    $sql = "update products set status = 0 where id =" . $id;
     pdo_execute($sql);
 }
-
-
-function loadall_products_home(){
-    $sql="select * from products where 1 order by id desc limit 0,6"; 
-    $listproducts=pdo_query($sql); 
-    return $listproducts;
+function restore_products($id){
+    $sql = "update products set status = 1 where id =" . $id;
+    pdo_execute($sql);
 }
-function loadall_products_top10(){
-    $sql="select * from products where 1 order by luotxem desc limit 0,10"; 
-    $listproducts=pdo_query($sql); 
-    return $listproducts;
-}
-
-function load_all_products($kyw="", $iddm=0){
+function load_all_products($kyw="", $categories_id=0){
     $sql="select * from products where 1";
     if($kyw!=""){
         $sql.=" and name like '%".$kyw."%'";
     }
-    if($iddm>0){
-        $sql.=" and categories_id = '".$iddm."'";
+    if($categories_id>0){
+        $sql.=" and categories_id = '".$categories_id."'";
     }
     $sql.=" order by id desc";
-    $sql = "select * from products order by id desc";
+    $sql = "select * from products where status = 1 order by id desc";
+    $listproducts=pdo_query($sql); 
+    return $listproducts;
+}
+function load_deleted_products($kyw="", $categories_id=0){
+    $sql="select * from products where 1";
+    if($kyw!=""){
+        $sql.=" and name like '%".$kyw."%'";
+    }
+    if($categories_id>0){
+        $sql.=" and categories_id = '".$categories_id."'";
+    }
+    $sql.=" order by id desc";
+    $sql = "select * from products where status = 0 order by id desc";
     $listproducts=pdo_query($sql); 
     return $listproducts;
 }
@@ -40,9 +44,9 @@ function load_one_products($id){
     $products=pdo_query_one($sql);
     return $products;
 }
-function load_ten_dm($iddm){
-    if($iddm>0){
-    $sql="select * from danhmuc where id=".$iddm;
+function load_ten_dm($categories_id){
+    if($categories_id>0){
+    $sql="select * from danhmuc where id=".$categories_id;
     $dm=pdo_query_one($sql);
     extract($dm);
     return $name;
@@ -50,19 +54,18 @@ function load_ten_dm($iddm){
     return "";
 }
 }
-function load_products_cungloai($id,$iddm){
-    $sql="select * from products where categories_id=".$iddm." AND id <> ".$id;
+function load_products_cungloai($id,$categories_id){
+    $sql="select * from products where categories_id=".$categories_id." AND id <> ".$id;
     $listproducts=pdo_query($sql); 
     return $listproducts;
 }
 
-function update_products($id, $iddm, $tensp, $giasp, $mota, $hinh){
-    if($hinh!=""){
-        $sql="update products set categories_id='".$iddm."', name='".$tensp."', price='".$giasp."', detail='".$mota."', img='".$hinh."'   where id=".$id;
+function update_products($id, $categories_id, $name, $price, $detail, $img){
+    if($img!=""){
+        $sql="update products set categories_id='".$categories_id."', name='".$name."', price='".$price."', detail='".$detail."', img='".$img."'   where id=".$id;
     }else{
-        $sql="update products set categories_id='".$iddm."', name='".$tensp."', price='".$giasp."', detail='".$mota."'   where id=".$id;
+        $sql="update products set categories_id='".$categories_id."', name='".$name."', price='".$price."', detail='".$detail."'   where id=".$id;
     }
-    
     pdo_execute($sql);
 }
 
