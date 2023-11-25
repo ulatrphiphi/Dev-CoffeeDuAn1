@@ -2,6 +2,8 @@
 include "../model/pdo.php";
 include "../model/categories.php";
 include "../model/products.php";
+include '../model/users.php';
+?>
 
 ?>
 <!DOCTYPE html>
@@ -174,13 +176,15 @@ include "../model/products.php";
                   break; 
                 // User
               case "listuser":
-                include "modules/users/list.php";
+                $listuser=loadall_user();
+                include "modules/user/list.php";
                 break;
-              case "adduser":
-                include "modules/users/add.php";
-                break;
-              case "edituser":
-                include "modules/users/edit.php";
+              case "deletetuser":
+                if(isset($_GET['id'])&& ($_GET['id'])){
+                  delete_user($_GET['id']);
+                }
+                $listuser = loadall_user();
+                include "modules/user/list.php";
                 break;
                 // Order
               case "listorder":
