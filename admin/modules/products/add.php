@@ -1,36 +1,59 @@
-
-
-
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title"> Thêm sản phẩm</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->
-    <form method="POST" action="" enctype="multipart/form-data">
+    <form action="index.php?act=addpro" method="POST" enctype="multipart/form-data">
         <div class="card-body">
-            <div class="form-group">
-                <label for="name">Tên sản phẩm</label>
-                <input type="text" class="form-control" id="name" required name="name" placeholder="Nhập tên sản phẩm">
+
+
+            <div class="form-group card-body">
+                Danh mục<br>
+                <!-- <select name="iddm">
+                    <?php
+                    foreach ($list_categories as $categories) {
+                        extract($categories);
+                        echo '<option value=' . $id . '>' . $name . '</option>';
+                    }
+                    ?>
+                </select> -->
+                <form action="/admin/index.php" class="form-inline" method="GET">
+                    <input type="hidden" name="pages" value="posts">
+                    <input type="hidden" name="action" value="list">
+                    <select name="categories" id="categories" class="form-control mr-3">
+                        <?php
+                        foreach ($list_categories as $categories) {
+                            extract($categories);
+                            echo '<option value=' . $id . '>' . $name . '</option>';
+                        }
+                        ?>
+                    </select>
+                </form>
             </div>
             <div class="form-group">
-                <label for="thumbnail">Ảnh</label>
-                <input type="file" required class="form-control" id="thumbnail" name="thumbnail">
+                Tên sản phẩm <br>
+                <input type="text" name="tensp">
             </div>
             <div class="form-group">
-                <label for="summernote">Nội dung</label>
-                <textarea class="form-control" required id="summernote" name="content"></textarea>
+                Giá sản phẩm <br>
+                <input type="text" name="giasp">
             </div>
             <div class="form-group">
-                <label for="price">Giá gốc</label>
-                <input type="number" class="form-control" id="price" name="price">
+                Ảnh <br>
+                <input type="file" name="hinh">
             </div>
             <div class="form-group">
-                <label for="sale_price">Giá đã giảm</label>
-                <input type="number" class="form-control" id="sale_price" required name="sale_price">
+                Mô tả<br>
+                <textarea class="form-control" id="summernote" name="content"><?= $products['detail'] ?? '' ?></textarea>
             </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+            <div class="form-group">
+                <input type="submit" name="themmoi" value="Thêm mới">
+                <input type="reset" value="Nhập lại">
+                <a href="index.php?act=listpro"> <input type="button" value="Danh sách"></a>
             </div>
+            <?php
+            if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
+            ?>
     </form>
 </div>
