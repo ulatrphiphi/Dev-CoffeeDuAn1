@@ -1,8 +1,7 @@
-
-
+<div class="card-footer"><a href="index.php?act=listcate"><button type="submit" class="btn btn-primary" style="float:left;">Danh sách danh mục</button></a></div>
 
 <div class="card card-primary">
-    <div class="card-header">
+<div class="card-header">
         <h3 class="card-title"> Thêm Danh mục</h3>
     </div>
     <!-- /.card-header -->
@@ -23,15 +22,17 @@
                     echo "<span style='color:red;'>Vui lòng nhập tên danh mục</span>";
                 } else {
                     $name = $_POST["name"];
-                    if(!preg_match("/^[a-zA-Z ]*$/",$name)) {
+                    if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
                         echo "<span style='color:red;'>Tên danh mục chỉ chấp nhận chữ và khoảng trắng.</span>";
                     } else {
-                        echo $name;
-                        if(isset($alert)&&($alert!="")) echo $alert;
+                        $name = $_POST['name'];
+                        insert_categories($name);
+                        $alert = '<p style="color:red;">Thêm thành công!</p>';
+                        if (isset($alert) && ($alert != "")) echo $alert;
                     }
                 }
             }
-        
+
             ?>
             <!-- <div class="form-group">
                 <label for="name">Tên danh mục</label>
@@ -55,7 +56,7 @@
             </div> -->
             <div class="card-footer">
                 <input type="submit" name="addnew" class="btn btn-primary" value="Thêm Danh Mục">
-</div>
-            
+            </div>
+
     </form>
 </div>

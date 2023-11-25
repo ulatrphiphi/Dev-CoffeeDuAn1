@@ -136,11 +136,6 @@ include "../model/products.php";
                 include "modules/categories/list.php";
                 break;
               case "addcate":
-                if (isset($_POST['addnew']) && ($_POST['addnew'])) {
-                  $name = $_POST['name'];
-                  insert_categories($name);
-                  $alert = '<p style="color:red;">Thêm thành công!</p>';
-                }
                 include "modules/categories/add.php";
                 break;
               case "editcate":
