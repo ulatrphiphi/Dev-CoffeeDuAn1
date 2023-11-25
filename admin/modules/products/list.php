@@ -56,6 +56,7 @@
               <th>Tên sản phẩm</th>
               <th>Ảnh sản phẩm</th>
               <th>Giá sản phẩm</th>
+              <th>Mô tả</th>
               <th>Thao tác</th>
             </tr>
           </thead>
@@ -64,35 +65,28 @@
             foreach ($listproducts as $products) {
               extract($products);
 
-              $suasp = "index.php?act=editpro&id=" . $id;
-              $xoasp = "index.php?act=delpro&id=" . $id;
-              $hinhpath = "../upload/" . $img;
-              if (is_file($hinhpath)) {
-                $hinh = "<img src='" . $hinhpath . "' height='80'>";
+              $editpro = "index.php?act=editpro&id=" . $id;
+              $deletepro = "index.php?act=deletepro&id=" . $id;
+              $imgpath = "./uploads/" . $img;
+              if (is_file($imgpath)) {
+                $img = "<img src='" . $imgpath . "' height='50'>";
               } else {
-                $hinh = "no photo";
+                $img = "Không có ảnh";
               }
               echo '     <tr>    
                     <td>' . $id . '</td>
                     <td>' . $name . '</td>
-                    <td>' . $hinh . '</td>
+                    <td>' . $img . '</td>
                     <td><strong>' . number_format($price, 0, ',', '.') . ' VNĐ</strong></td>
+                    <td>'.$detail.'</td>
                     <td>
-                      <a href="' . $suasp . '" class="btn btn-primary">Sửa</a>
-                      <a href="' . $xoasp . '"><input type="button" class="btn btn-danger" value="Xóa"></a>
+                      <a href="' . $editpro . '" class="btn btn-primary">Sửa</a>
+                      <a href="' . $deletepro . '"><input type="button" class="btn btn-danger" value="Xóa"></a>
                       </td>
                   </tr>
                     ';
             }
             ?>
-            <!-- <tr>    
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <a href="index.php?act=editsp" class="btn btn-primary">Sửa</a>
-                    <a href="#" class="btn btn-danger">Xóa</a>
-                  </td>
-                </tr> -->
           </tbody>
         </table>
 
@@ -102,3 +96,6 @@
       </div>
       <!-- /.card-body -->
     </div>
+    <div class="card-footer">
+  <a href="index.php?act=storgepro"><button type="submit" class="btn btn-danger" style="float:right;">Xem sản phẩm đã xóa</button></a>
+</div>
