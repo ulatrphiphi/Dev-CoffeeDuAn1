@@ -1,35 +1,65 @@
+<?php
+$id = isset($_GET['id']) ? $_GET['id'] : 0;
+$products = load_one_products($id);
+
+if (is_array($products)) {
+    extract($products);
+    // Các biến như $id, $name, $price, $img, $detail đã được khai báo
+}
+$hinhpath = "../upload/" . $img;
+if (is_file($hinhpath)) {
+    $hinh = "<img src='" .  $hinhpath . "' height='80'";
+} else {
+    $hinh = "no photo";
+}
+?>
 
 
 <div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title"> Sửa sản phẩm</h3>
     </div>
-    <!-- /.card-header -->
-    <!-- form start -->
-    <form method="POST" action="" enctype="multipart/form-data">
-        <div class="card-body">
-            <div class="form-group">
-                <label for="name">Tên sản phẩm</label>
-                <input type="text" value="<?= $data['name'] ?? '' ?>" class="form-control" id="name" required name="name" placeholder="Nhập tên sản phẩm">
+
+
+    <form action="index.php?act=editpro" method="POST" enctype="multipart/form-data">
+            <div class="cart body">
+                <br>
+                <select name="iddm" id="">
+                    <option value="0" selected>Tất cả</option>
+                    <?php foreach ($list_categories as $categories) {
+                        extract($categories);
+                        if ($iddm == $id) $s = "selected";
+                        else $s = "";
+                        echo '<option value="' . $id . '" ' . $s . '>' . $name . '</option>';
+                    } ?>
+
+                </select>
             </div>
             <div class="form-group">
-                <label for="thumbnail">Ảnh</label>
-                <input type="file" value="<?= $data['thumbnail'] ?? '' ?>" class="form-control" id="thumbnail" name="thumbnail">
+                Tên sản phẩm <br>
+                <input type="text" name="tensp" id="" value="<?= $products['name'] ?>">
             </div>
             <div class="form-group">
-                <label for="summernote">Nội dung</label>
-                <textarea class="form-control" required id="summernote" name="content"><?= $data['content'] ?? '' ?></textarea>
+                Giá <br>
+                <input type="text" name="giasp" value="<?= $products['price'] ?>">
             </div>
             <div class="form-group">
-                <label for="price">Giá gốc</label>
-                <input type="number" value="<?= $data['price'] ?? '' ?>" class="form-control" id="price" name="price">
+                Hình ảnh <br>
+                <input type="file" name="hinh">
+                <?= $hinh ?>
             </div>
             <div class="form-group">
-                <label for="sale_price">Giá đã giảm</label>
-                <input type="text" class="form-control" value="<?= $data['sale_price'] ?? '' ?>" id="sale_price" required name="sale_price">
+                Mô tả <br>
+                <textarea class="form-control" id="summernote" name="mota"><?= $products['detail'] ?? '' ?></textarea>
             </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Sửa</button>
+            <div class="form-group">
+                <input type="hidden" name="id" value="<?= $products['id'] ?>">
+                <input type="submit" name="capnhat" value="Cập nhật">
+                <input type="reset" value="Nhập lại">
+                <a href="index.php?act=listpro"><input type="button" value="Danh sách"></a>
             </div>
-    </form>
+            <?php
+            if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
+            ?>
+        </form>
 </div>
