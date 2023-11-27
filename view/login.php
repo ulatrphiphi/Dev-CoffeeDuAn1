@@ -1,4 +1,3 @@
-
 <?php
 
 if (!empty($_POST)) {
@@ -9,12 +8,7 @@ if (!empty($_POST)) {
 
     if (empty($_POST['pass'])) {
         $error['pass']['required'] = 'Mật khẩu không được để trống';
-    } else {
-        if (strlen($_POST['pass']) < 5) {
-            $error['pass']['invaild'] = 'Mật khẩu phải có ít nhất 5 ký tự';
-        }
     }
-
 }
 ?>
 
@@ -56,31 +50,32 @@ if (!empty($_POST)) {
         <div class="limiter">
             <div class="container-login100 " style="background-image: url('/view/images/bg_2.jpg');">
                 <div class="wrap-login100">
-                    <form class="login100-form validate-form" action="index.php?act=login" method="POST">
+                    <form class="login100-form validate-form" action="" method="POST">
                         <span class="login100-form-logo">
-                           <a href="index.php"><img src="/view/images/logo.png" width="160px" alt=""></a>
+                            <a href="index.php"><img src="/view/images/logo.png" width="160px" alt=""></a>
                             <!-- <i class="zmdi zmdi-landscape"></i> -->
                         </span>
-                        
+
                         <span class="login100-form-title p-b-34 p-t-27">
                             Đăng Nhập
                         </span>
+                        <?= isset($msg) ? '<p class="text-danger">' . $msg . '</p>' : false; ?>
 
                         <div class="wrap-input100 validate-input" data-validate="Enter username">
                             <input class="input100" type="text" name="user" placeholder="Tên đăng Nhập">
                             <span class="focus-input100" data-placeholder="&#xf207;"></span>
                         </div>
                         <?php echo !empty($error['user']['required']) ? '<p style="color: red;">' . $error['user']['required'] : '';
-                                '</p>' ?>
+                        '</p>' ?>
 
                         <div class="wrap-input100 validate-input" data-validate="Enter password">
                             <input class="input100" type="password" name="pass" placeholder="Mật Khẩu">
                             <span class="focus-input100" data-placeholder="&#xf191;"></span>
                         </div>
                         <?php echo !empty($error['pass']['required']) ? '<p style="color: red;">' . $error['pass']['required'] : '';
-                                '</p>' ?>
-                            <?php echo !empty($error['pass']['invaild']) ? '<p style="color: red;">' . $error['pass']['invaild'] : '';
-                                '</p>' ?>
+                        '</p>' ?>
+                        <?php echo !empty($error['pass']['invaild']) ? '<p style="color: red;">' . $error['pass']['invaild'] : '';
+                        '</p>' ?>
 
                         <div class="contact100-form-checkbox">
                             <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
@@ -90,9 +85,9 @@ if (!empty($_POST)) {
                         </div>
 
                         <div class="container-login100-form-btn ">
-                      <input type="submit" value="Đăng Nhập" class="loginsubmit" name="login"> 
-                               
-                            
+                            <input type="submit" value="Đăng Nhập" class="loginsubmit" name="login">
+
+
                         </div>
 
                         <div class="text-center p-t-90 txt1">
