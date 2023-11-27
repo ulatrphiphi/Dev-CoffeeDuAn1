@@ -46,7 +46,7 @@ function load_one_products($id){
 }
 function load_ten_dm($categories_id){
     if($categories_id>0){
-    $sql="select * from danhmuc where id=".$categories_id;
+    $sql="select * from categories where id=".$categories_id;
     $dm=pdo_query_one($sql);
     extract($dm);
     return $name;
@@ -69,4 +69,12 @@ function update_products($id, $categories_id, $name, $price, $detail, $img){
     pdo_execute($sql);
 }
 
+function load_all_thongke()
+{
+    $sql = "select categories.id as madm, categories.name as tendm, count(products.id) as countsp, min(products.price) as minprice, max(products.price) as maxprice, avg(products.price) as avgprice";
+    $sql .= " from products left join categories on categories.id=products.categories_id";
+    $sql .= " group by categories.id order by categories.id desc";
+    $listthongke = pdo_query($sql);
+    return $listthongke;
+}
 ?>
