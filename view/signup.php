@@ -1,4 +1,20 @@
+<?php
 
+if (!empty($_POST)) {
+    $error = [];
+    if (empty($_POST['user'])) {
+        $error['user']['required'] = 'Tên đăng nhập không được để trống';
+    }
+
+    if (empty($_POST['pass'])) {
+        $error['pass']['required'] = 'Mật khẩu không được để trống';
+    } else {
+        if (strlen($_POST['pass']) < 5) {
+            $error['pass']['invaild'] = 'Mật khẩu phải có ít nhất 5 ký tự';
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,9 +51,9 @@
         <div class="limiter">
             <div class="container-login100 " style="background-image: url('/view/images/bg_2.jpg');">
                 <div class="wrap-login100">
-                    <form class="login100-form validate-form" method="POST" action="index.php?act=signup" >
+                    <form class="login100-form validate-form" method="POST" action="index.php?act=signup">
                         <span class="login100-form-logo">
-                           <a href="index.php"><img src="/view/images/logo.png" width="160px" alt=""></a>
+                            <a href="index.php"><img src="/view/images/logo.png" width="160px" alt=""></a>
                             <!-- <i class="zmdi zmdi-landscape"></i> -->
                         </span>
 
@@ -46,16 +62,16 @@
                         </span>
 
                         <div class="wrap-input100 validate-input" data-validate="Enter username">
-                            <input class="input100" type="text" name="username" placeholder="Tên đăng Nhập">
+                            <input class="input100" type="text" name="user" placeholder="Tên đăng Nhập">
                             <span class="focus-input100" data-placeholder="&#xf207;"></span>
                         </div>
-                        
+
 
                         <div class="wrap-input100 validate-input" data-validate="Enter email">
-                            <input class="input100" type="text" name="email" placeholder="Email của bạn">
+                            <input class="input100" type="email" name="email" placeholder="Email của bạn">
                             <span class="focus-input100" data-placeholder="&#xf207;"></span>
                         </div>
-                        
+
 
                         <div class="wrap-input100 validate-input" data-validate="Enter password">
                             <input class="input100" type="password" name="pass" placeholder="Mật Khẩu">
@@ -75,9 +91,9 @@
                         </div>
 
                         <div class="container-login100-form-btn ">
-                      <input type="submit" value="Đăng ký" class="loginsubmit" id="signup" name="signup"> 
-                               
-                            
+                            <input type="submit" value="Đăng ký" class="loginsubmit" id="signup" name="signup">
+
+
                         </div>
 
                     </form>
