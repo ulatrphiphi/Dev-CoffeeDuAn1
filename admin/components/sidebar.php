@@ -147,6 +147,24 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Quản lý thống kê
+              <i class="fas fa-angle-left right"></i>
+              <span class="badge badge-info right"></span>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="index.php?act=thongke" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh sách thống kê</p>
+              </a>
+            </li>
+          </ul>
+        </li>
         
       </ul>
     </nav>
