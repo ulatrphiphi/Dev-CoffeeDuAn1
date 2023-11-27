@@ -60,9 +60,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $pass=$_POST['pass'];
                     $cpass=$_POST['cpass'];
                     $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
-                    // insert_user($email, $user, $pass, $cpass);
+                    insert_user($email, $user, $pass, $cpass);
                     // echo '<script>alert("Đăng ký thành công, mời đăng nhập")</script>';
-                    // header('LOCATION: index.php?act=login');
+                    header('LOCATION: index.php?act=login');
                 }
             include 'view/signup.php';
             break;
