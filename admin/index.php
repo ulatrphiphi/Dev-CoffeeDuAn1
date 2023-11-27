@@ -187,11 +187,11 @@ include '../model/users.php';
                 break;
                 // User
               case "listuser":
-                $listuser=loadall_user();
+                $listuser = loadall_user();
                 include "modules/user/list.php";
                 break;
               case "deletetuser":
-                if(isset($_GET['id'])&& ($_GET['id'])){
+                if (isset($_GET['id']) && ($_GET['id'])) {
                   delete_user($_GET['id']);
                 }
                 $listuser = loadall_user();
@@ -206,6 +206,16 @@ include '../model/users.php';
                 break;
               case "editorder":
                 include "modules/orders/edit.php";
+                break;
+
+              case 'thongke':
+                $listthongke = load_all_thongke();
+                include "modules/thongke/list.php";
+                break;
+
+              case 'bieudo':
+                $listthongke = load_all_thongke();
+                include "modules/thongke/bieudo.php";
                 break;
             }
           } else {
