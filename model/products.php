@@ -12,6 +12,11 @@ function restore_products($id){
     $sql = "update products set status = 1 where id =" . $id;
     pdo_execute($sql);
 }
+function show_all_products(){
+    $sql = "select * from products where status = 1 order by id desc limit 0,4";
+    $showproducts = pdo_query($sql);
+    return $showproducts;
+}
 function load_all_products($kyw="", $categories_id=0){
     $sql="select * from products where 1";
     if($kyw!=""){
@@ -54,8 +59,8 @@ function load_ten_dm($categories_id){
     return "";
 }
 }
-function load_products_cungloai($id,$categories_id){
-    $sql="select * from products where categories_id=".$categories_id." AND id <> ".$id;
+function load_products_by_categories($id,$categories_id){
+    $sql="select * from products where status and categories_id=".$categories_id." AND id <> ".$id;
     $listproducts=pdo_query($sql); 
     return $listproducts;
 }

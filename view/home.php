@@ -10,7 +10,7 @@
             Không gian thoải mái, yên tĩnh để các lập trình viên có thể tập trung làm việc.
           </p>
           <p>
-            <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Đặt bàn ngay</a>
+            <a href="#book" class="btn btn-primary p-3 px-xl-4 py-xl-3">Đặt bàn ngay</a>
             <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Xem Menu</a>
           </p>
         </div>
@@ -29,7 +29,7 @@
             Các dịch vụ hỗ trợ như phục vụ đồ uống, đồ ăn nhẹ,... để các lập trình viên có thể thoải mái làm việc mà không phải lo lắng về việc ăn uống.
           </p>
           <p>
-            <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Đặt Bàn Ngay</a>
+            <a href="#book" class="btn btn-primary p-3 px-xl-4 py-xl-3">Đặt Bàn Ngay</a>
             <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Xem Menu</a>
           </p>
         </div>
@@ -48,7 +48,7 @@
             Wifi tốc độ cao để các lập trình viên có thể truy cập internet và tải xuống các tài liệu, phần mềm cần thiết.
           </p>
           <p>
-            <a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Đặt Bàn Ngay</a>
+            <a href="#book" class="btn btn-primary p-3 px-xl-4 py-xl-3">Đặt Bàn Ngay</a>
             <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Xem Menu</a>
           </p>
         </div>
@@ -309,320 +309,67 @@
     <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-7 heading-section ftco-animate text-center">
         <span class="subheading">Khám Phá</span><br>
-        <h2 class="mb-4">Best Sellers</h2>
+        <h2 class="mb-4">Hương vị mới</h2>
         <p>
-          Những sản phẩm được ưa chuộng nhất.
+          Những thức uống mới nhất.
         </p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
-        <div class="menu-entry">
-          <a href="#" class="img" style="background-image: url(/view/images/menu-1.jpg)"></a>
-          <div class="text text-center pt-4">
-            <h3><a href="#">Coffee Capuccino</a></h3>
-            <p>
-              A small river named Duden flows by their place and supplies
-            </p>
-            <p class="price"><span>$5.90</span></p>
-            <p>
-              <a href="#" class="btn btn-primary btn-outline-primary">Thêm Vào Giỏ Hàng</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="menu-entry">
-          <a href="#" class="img" style="background-image: url(/view/images/menu-2.jpg)"></a>
-          <div class="text text-center pt-4">
-            <h3><a href="#">Coffee Capuccino</a></h3>
-            <p>
-              A small river named Duden flows by their place and supplies
-            </p>
-            <p class="price"><span>$5.90</span></p>
-            <p>
-              <a href="#" class="btn btn-primary btn-outline-primary">Thêm Vào Giỏ Hàng</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="menu-entry">
-          <a href="#" class="img" style="background-image: url(/view/images/menu-3.jpg)"></a>
-          <div class="text text-center pt-4">
-            <h3><a href="#">Coffee Capuccino</a></h3>
-            <p>
-              A small river named Duden flows by their place and supplies
-            </p>
-            <p class="price"><span>$5.90</span></p>
-            <p>
-              <a href="#" class="btn btn-primary btn-outline-primary">Thêm Vào Giỏ Hàng</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="menu-entry">
-          <a href="#" class="img" style="background-image: url(/view/images/menu-4.jpg)"></a>
-          <div class="text text-center pt-4">
-            <h3><a href="#">Coffee Capuccino</a></h3>
-            <p>
-              A small river named Duden flows by their place and supplies
-            </p>
-            <p class="price"><span>$5.90</span></p>
-            <p>
-              <a href="#" class="btn btn-primary btn-outline-primary">Thêm Vào Giỏ Hàng</a>
-            </p>
-          </div>
+      <?php
+      $i = 0;
+      foreach ($newproducts as $product) {
+        extract($product);
+        $productlink = "index.php?act=productdetail&id=" . $id;
+        $img = 'admin/uploads/' . $img;
+
+        echo '
+    <div class="col-md-3">
+      <div class="menu-entry">
+        <a href="#" class="img" style="background-image: url(' . $img . ')"></a>
+        <div class="text text-center pt-4">
+          <h3><a href="#">' . $name . '</a></h3>
+          <p class="price"><span>' . $price . '</span></p>
+          <p>
+            <a href="#" class="btn btn-primary btn-outline-primary">Thêm Vào Giỏ Hàng</a>
+          </p>
         </div>
       </div>
     </div>
+    
+    ';
+        $i += 1;
+      }
+      ?>
+    </div>
+  </div>
   </div>
 </section>
 
 <section class="ftco-gallery">
   <div class="container-wrap">
     <div class="row no-gutters">
-      <div class="col-md-3 ftco-animate">
-        <a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(/view/images/gallery-1.jpg)">
-          <div class="icon mb-4 d-flex align-items-center justify-content-center">
-            <span class="icon-search"></span>
-          </div>
+      <div class="col-md-3">
+        <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(/view/images/gallery-1.jpg)">
         </a>
       </div>
-      <div class="col-md-3 ftco-animate">
-        <a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(/view/images/gallery-2.jpg)">
-          <div class="icon mb-4 d-flex align-items-center justify-content-center">
-            <span class="icon-search"></span>
-          </div>
+      <div class="col-md-3">
+        <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(/view/images/gallery-2.jpg)">
         </a>
       </div>
-      <div class="col-md-3 ftco-animate">
-        <a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(/view/images/gallery-3.jpg)">
-          <div class="icon mb-4 d-flex align-items-center justify-content-center">
-            <span class="icon-search"></span>
-          </div>
+      <div class="col-md-3">
+        <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(/view/images/gallery-3.jpg)">
         </a>
       </div>
-      <div class="col-md-3 ftco-animate">
-        <a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(/view/images/gallery-4.jpg)">
-          <div class="icon mb-4 d-flex align-items-center justify-content-center">
-            <span class="icon-search"></span>
-          </div>
+      <div class="col-md-3">
+        <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(/view/images/gallery-4.jpg)">
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="ftco-menu">
-  <div class="container">
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-7 heading-section text-center ftco-animate">
-        <span class="subheading">Khám Phá</span><br>
-        <h2 class="mb-4">Sản Phẩm Khác</h2>
-        <p>
-          Menu chúng tôi luôn đa dạng các loại thức uống và đồ ăn nhẹ.
-        </p>
-      </div>
-    </div>
-    <div class="row d-md-flex">
-      <div class="col-lg-12 ftco-animate p-md-5">
-        <div class="row">
-          <div class="col-md-12 nav-link-wrap mb-5">
-            <div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Cà Phê</a>
 
-              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Trà</a>
-
-              <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Bánh Ngọt</a>
-            </div>
-          </div>
-          <div class="col-md-12 d-flex align-items-center">
-            <div class="tab-content ftco-animate" id="v-pills-tabContent">
-              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
-                <div class="row">
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-4" style="
-                              background-image: url(/view/images/dish-1.jpg);
-                            "></a>
-                      <div class="text">
-                        <h3><a href="#">Grilled Beef</a></h3>
-                        <p>
-                          Far far away, behind the word mountains, far from
-                          the countries Vokalia and Consonantia.
-                        </p>
-                        <p class="price"><span>$2.90</span></p>
-                        <p>
-                          <a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-4" style="
-                              background-image: url(/view/images/dish-2.jpg);
-                            "></a>
-                      <div class="text">
-                        <h3><a href="#">Grilled Beef</a></h3>
-                        <p>
-                          Far far away, behind the word mountains, far from
-                          the countries Vokalia and Consonantia.
-                        </p>
-                        <p class="price"><span>$2.90</span></p>
-                        <p>
-                          <a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-4" style="
-                              background-image: url(/view/images/dish-3.jpg);
-                            "></a>
-                      <div class="text">
-                        <h3><a href="#">Grilled Beef</a></h3>
-                        <p>
-                          Far far away, behind the word mountains, far from
-                          the countries Vokalia and Consonantia.
-                        </p>
-                        <p class="price"><span>$2.90</span></p>
-                        <p>
-                          <a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
-                <div class="row">
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-4" style="
-                              background-image: url(/view/images/drink-1.jpg);
-                            "></a>
-                      <div class="text">
-                        <h3><a href="#">Lemonade Juice</a></h3>
-                        <p>
-                          Far far away, behind the word mountains, far from
-                          the countries Vokalia and Consonantia.
-                        </p>
-                        <p class="price"><span>$2.90</span></p>
-                        <p>
-                          <a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-4" style="
-                              background-image: url(/view/images/drink-2.jpg);
-                            "></a>
-                      <div class="text">
-                        <h3><a href="#">Pineapple Juice</a></h3>
-                        <p>
-                          Far far away, behind the word mountains, far from
-                          the countries Vokalia and Consonantia.
-                        </p>
-                        <p class="price"><span>$2.90</span></p>
-                        <p>
-                          <a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-4" style="
-                              background-image: url(/view/images/drink-3.jpg);
-                            "></a>
-                      <div class="text">
-                        <h3><a href="#">Soda Drinks</a></h3>
-                        <p>
-                          Far far away, behind the word mountains, far from
-                          the countries Vokalia and Consonantia.
-                        </p>
-                        <p class="price"><span>$2.90</span></p>
-                        <p>
-                          <a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
-                <div class="row">
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-4" style="
-                              background-image: url(/view/images/dessert-1.jpg);
-                            "></a>
-                      <div class="text">
-                        <h3><a href="#">Hot Cake Honey</a></h3>
-                        <p>
-                          Far far away, behind the word mountains, far from
-                          the countries Vokalia and Consonantia.
-                        </p>
-                        <p class="price"><span>$2.90</span></p>
-                        <p>
-                          <a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-4" style="
-                              background-image: url(/view/images/dessert-2.jpg);
-                            "></a>
-                      <div class="text">
-                        <h3><a href="#">Hot Cake Honey</a></h3>
-                        <p>
-                          Far far away, behind the word mountains, far from
-                          the countries Vokalia and Consonantia.
-                        </p>
-                        <p class="price"><span>$2.90</span></p>
-                        <p>
-                          <a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <div class="menu-wrap">
-                      <a href="#" class="menu-img img mb-4" style="
-                              background-image: url(/view/images/dessert-3.jpg);
-                            "></a>
-                      <div class="text">
-                        <h3><a href="#">Hot Cake Honey</a></h3>
-                        <p>
-                          Far far away, behind the word mountains, far from
-                          the countries Vokalia and Consonantia.
-                        </p>
-                        <p class="price"><span>$2.90</span></p>
-                        <p>
-                          <a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="ftco-section img" id="ftco-testimony" style="background-image: url(/view/images/bg_1.jpg)" data-stellar-background-ratio="0.5">
   <div class="overlay"></div>
@@ -641,9 +388,9 @@
           <blockquote>
             <p>
               &ldquo;Không gian rộng rãi, yên tĩnh, thức uống ngon,
-               nằm ngay mặt tiền đại lộ đông đúc nhất Cần Thơ công thêm thiết kế phía trước bằng kính nên có "tầm nhìn" 
-               -nhâm nhi lý cà phê khi ngắm nhìn một thành phố nhộn nhip-khá là đẹp và thích hợp cho "tự sướng".
-                Phù hợp để học tập, làm việc hoặc thư giản.&rdquo;
+              nằm ngay mặt tiền đại lộ đông đúc nhất Cần Thơ công thêm thiết kế phía trước bằng kính nên có "tầm nhìn"
+              -nhâm nhi lý cà phê khi ngắm nhìn một thành phố nhộn nhip-khá là đẹp và thích hợp cho "tự sướng".
+              Phù hợp để học tập, làm việc hoặc thư giản.&rdquo;
             </p>
           </blockquote>
           <div class="author d-flex mt-4">
@@ -662,8 +409,8 @@
           <blockquote>
             <p>
               &ldquo;Không gian rộng rãi, có ghế để nghỉ lưng, dễ tìm đường vào quán.
-Thích hợp cafe cuối tuần và là địa điểm tự học buổi tối lý tưởng.
-Đồ uống cũng khá ok, chưa đậm vị lắm.&rdquo;
+              Thích hợp cafe cuối tuần và là địa điểm tự học buổi tối lý tưởng.
+              Đồ uống cũng khá ok, chưa đậm vị lắm.&rdquo;
             </p>
           </blockquote>
           <div class="author d-flex mt-4">
@@ -718,8 +465,8 @@ Thích hợp cafe cuối tuần và là địa điểm tự học buổi tối l
           <blockquote>
             <p>
               &ldquo;Thiết kế quán hiện đại. Rộng rãi.
-               Nước uống không có nhiều lựa chọn mới lạ, nhà vệ sinh nhỏ nhưng sạch sẽ. Nhân viên vui vẻ.
-                Rất mừng vì Cần Thơ đã bắt đầu xuất hiện những thương hiệu lớn như thế này để nâng cao chất lượng cuộc sống của người dân &rdquo;
+              Nước uống không có nhiều lựa chọn mới lạ, nhà vệ sinh nhỏ nhưng sạch sẽ. Nhân viên vui vẻ.
+              Rất mừng vì Cần Thơ đã bắt đầu xuất hiện những thương hiệu lớn như thế này để nâng cao chất lượng cuộc sống của người dân &rdquo;
             </p>
           </blockquote>
           <div class="author d-flex mt-4">
@@ -737,158 +484,51 @@ Thích hợp cafe cuối tuần và là địa điểm tự học buổi tối l
   </div>
 </section>
 
-<section class="ftco-section">
-  <div class="container">
-    <div class="row justify-content-center mb-5 pb-3">
-      <div class="col-md-7 heading-section ftco-animate text-center">
-        <h2 class="mb-4">Bài Viết Mới</h2>
+<section class="ftco-appointment" id="book">
+  <div class="overlay"></div>
+  <div class="container-wrap">
+    <div class="row no-gutters d-md-flex align-items-center">
+      <div class="col-md-6 d-flex align-self-stretch">
+       <img src="/view/images/bg_1.jpg" alt="" width="100%">      
       </div>
-    </div>
-    <div class="row d-flex">
-      <div class="col-md-4 d-flex ftco-animate">
-        <div class="blog-entry align-self-stretch">
-          <a href="blog-single.html" class="block-20" style="background-image: url('/view/images/image_1.jpg')">
-          </a>
-          <div class="text py-4 d-block">
-            <div class="meta">
-              <div><a href="#">Sept 10, 2018</a></div>
-              <div><a href="#">Admin</a></div>
-              <div>
-                <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+      <div class="col-md-6 appointment ftco-animate">
+        <h3 class="mb-3">Đặt bàn</h3>
+        <form action="#" class="appointment-form">
+          <div class="d-md-flex">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Họ và tên" />
+            </div>
+
+          </div>
+          <div class="d-md-flex">
+            <div class="form-group">
+              <div class="input-wrap">
+                <div class="icon">
+                  <span class="ion-md-calendar"></span>
+                </div>
+                <input type="text" class="form-control appointment_date" placeholder="Ngày" />
               </div>
             </div>
-            <h3 class="heading mt-2">
-              <a href="#">The Delicious Pizza</a>
-            </h3>
-            <p>
-              A small river named Duden flows by their place and supplies it
-              with the necessary regelialia.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate">
-        <div class="blog-entry align-self-stretch">
-          <a href="blog-single.html" class="block-20" style="background-image: url('/view/images/image_2.jpg')">
-          </a>
-          <div class="text py-4 d-block">
-            <div class="meta">
-              <div><a href="#">Sept 10, 2018</a></div>
-              <div><a href="#">Admin</a></div>
-              <div>
-                <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+            <div class="form-group ml-md-4">
+              <div class="input-wrap">
+                <div class="icon"><span class="ion-ios-clock"></span></div>
+                <input type="text" class="form-control appointment_time" placeholder="Thời Gian" />
               </div>
             </div>
-            <h3 class="heading mt-2">
-              <a href="#">The Delicious Pizza</a>
-            </h3>
-            <p>
-              A small river named Duden flows by their place and supplies it
-              with the necessary regelialia.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate">
-        <div class="blog-entry align-self-stretch">
-          <a href="blog-single.html" class="block-20" style="background-image: url('/view/images/image_3.jpg')">
-          </a>
-          <div class="text py-4 d-block">
-            <div class="meta">
-              <div><a href="#">Sept 10, 2018</a></div>
-              <div><a href="#">Admin</a></div>
-              <div>
-                <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-              </div>
+            <div class="form-group ml-md-4">
+              <input type="text" class="form-control" placeholder="Số Điện Thoại" />
             </div>
-            <h3 class="heading mt-2">
-              <a href="#">The Delicious Pizza</a>
-            </h3>
-            <p>
-              A small river named Duden flows by their place and supplies it
-              with the necessary regelialia.
-            </p>
           </div>
-        </div>
+          <div class="d-md-flex">
+            <div class="form-group">
+              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Ghi chú"></textarea>
+            </div>
+            <div class="form-group ml-md-4">
+              <input type="submit" value="Đặt Hẹn" class="btn btn-primary py-3 px-4" />
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
-
-<!-- <section class="ftco-appointment">
-      <div class="overlay"></div>
-      <div class="container-wrap">
-        <div class="row no-gutters d-md-flex align-items-center">
-          <div class="col-md-6 d-flex align-self-stretch">
-            <div id="map"></div>
-          </div>
-          <div class="col-md-6 appointment ftco-animate">
-            <h3 class="mb-3">Book a Table</h3>
-            <form action="#" class="appointment-form">
-              <div class="d-md-flex">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="First Name"
-                  />
-                </div>
-                <div class="form-group ml-md-4">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Last Name"
-                  />
-                </div>
-              </div>
-              <div class="d-md-flex">
-                <div class="form-group">
-                  <div class="input-wrap">
-                    <div class="icon">
-                      <span class="ion-md-calendar"></span>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control appointment_date"
-                      placeholder="Date"
-                    />
-                  </div>
-                </div>
-                <div class="form-group ml-md-4">
-                  <div class="input-wrap">
-                    <div class="icon"><span class="ion-ios-clock"></span></div>
-                    <input
-                      type="text"
-                      class="form-control appointment_time"
-                      placeholder="Time"
-                    />
-                  </div>
-                </div>
-                <div class="form-group ml-md-4">
-                  <input type="text" class="form-control" placeholder="Phone" />
-                </div>
-              </div>
-              <div class="d-md-flex">
-                <div class="form-group">
-                  <textarea
-                    name=""
-                    id=""
-                    cols="30"
-                    rows="2"
-                    class="form-control"
-                    placeholder="Message"
-                  ></textarea>
-                </div>
-                <div class="form-group ml-md-4">
-                  <input
-                    type="submit"
-                    value="Appointment"
-                    class="btn btn-primary py-3 px-4"
-                  />
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section> -->
