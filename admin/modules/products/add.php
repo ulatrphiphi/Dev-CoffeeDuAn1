@@ -11,7 +11,7 @@
 
             <div class="form-group">
                <label>Danh mục</label>
-               <select name="categories_id" id="">
+               <select name="categories_id" id="" class="form-control">
                             <?php foreach ($list_categories as $categories) {
                                 extract($categories);
                                 echo'<option value="'.$id.'">'.$name.'</option>';

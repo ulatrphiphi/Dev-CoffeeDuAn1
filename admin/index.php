@@ -106,25 +106,31 @@ include '../model/users.php';
                 //   break;
 
               case 'editpro':
-                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
-                  $iddm = $_POST['iddm'];
-                  $tensp = $_POST['tensp'];
-                  $giasp = $_POST['giasp'];
-                  $mota = $_POST['mota'];
-                  $hinh = $_FILES['hinh']['name'];
-                  $target_dir = "../upload/";
-                  $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
-                  if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                  } else {
-                  }
-                  update_products($id, $iddm, $tensp, $giasp, $mota, $hinh);
-                  $thongbao = "Cập nhật thành công";
+                if (isset($_POST['id']) && ($_POST['id'])) {
+                  $listproducts = load_one_products($_GET['id']);
                 }
                 $list_categories = load_all_categories();
-                $listproducts = load_all_products();
                 include "modules/products/edit.php";
                 break;
-
+              case 'updatepro':
+                if (isset($_POST['update']) && ($_POST['update'])) {
+                  $id = $_POST['id'];
+                  $categories_id = $_POST['categories_id'];
+                  $name = $_POST['name'];
+                  $price = $_POST['price'];
+                  $img = $_FILES['img']['name'];
+                  $detail = $_POST['detail'];
+                  $target_dir = "./uploads/";
+                  $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                  if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                  } else {
+                  }
+                  update_products($id, $categories_id, $name, $price, $detail, $img);
+                  $alert = "Cập nhật thành công";
+                }
+                $listproducts = load_all_products();
+                include 'modules/products/list.php';
+                break;
               case "deletepro":
                 if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                   delete_products($_GET['id']);

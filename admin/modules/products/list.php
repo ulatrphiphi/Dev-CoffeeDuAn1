@@ -56,7 +56,6 @@
               <th>Tên sản phẩm</th>
               <th>Ảnh sản phẩm</th>
               <th>Giá sản phẩm</th>
-              <th>Mô tả</th>
               <th>Thao tác</th>
             </tr>
           </thead>
@@ -69,7 +68,7 @@
               $deletepro = "index.php?act=deletepro&id=" . $id;
               $imgpath = "./uploads/" . $img;
               if (is_file($imgpath)) {
-                $img = "<img src='" . $imgpath . "' height='50'>";
+                $img = '<img src="' . $imgpath . '" height="50" style="box-shadow: 0 0 5px gray">';
               } else {
                 $img = "Không có ảnh";
               }
@@ -78,7 +77,7 @@
                     <td>' . $name . '</td>
                     <td>' . $img . '</td>
                     <td><strong>' . number_format($price, 0, ',', '.') . ' VNĐ</strong></td>
-                    <td>'.$detail.'</td>
+                   
                     <td>
                       <a href="' . $editpro . '" class="btn btn-primary">Sửa</a>
                       <a href="' . $deletepro . '"><input type="button" class="btn btn-danger" value="Xóa"></a>
