@@ -38,3 +38,11 @@ function update_categories($id,$name)
     $sql = "update categories set name = '" . $name . "' where id =" . $id;
     pdo_execute($sql);
 }
+
+
+function get_categories_limit($start, $limit)
+{
+    $sql = "select * from categories where status = 1 order by id desc limit $start, $limit";
+    $dm = pdo_query($sql);
+    return $dm;
+}
