@@ -33,7 +33,7 @@
             </thead>
             <tbody>
             <?php
-        foreach ($listuser as $user) {
+            foreach ($listdeleteuser as $user) {
           extract($user);
           $deluser ="index.php?act=deletetuser&id=".$id;
           echo '<tr>
@@ -55,5 +55,4 @@
       </div>
       <!-- /.card-body -->
     </div>
-    <a href="index.php?act=storageuser"><button type="submit" class="btn btn-danger" style="float:right;">Xem tài khoản đã xóa</button></a>
 

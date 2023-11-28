@@ -5,7 +5,6 @@ include "../model/products.php";
 include '../model/users.php';
 ?>
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -203,6 +202,10 @@ include '../model/users.php';
                 $listuser = loadall_user();
                 include "modules/user/list.php";
                 break;
+                case 'storageuser':
+                  $listdeleteuser = load_deleted_user();
+                  include "modules/user/storage.php";
+                  break;
                 // Order
               case "listorder":
                 include "modules/orders/list.php";

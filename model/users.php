@@ -7,6 +7,13 @@ function loadall_user()
     return $listuser;
 }
 
+function load_deleted_user()
+{
+    $sql = "select * from users where status = 0 order by id desc";
+    $list_user = pdo_query($sql);
+    return $list_user;
+}
+
 function insert_user($email, $user, $pass, $cpass)
 {
     if ($pass === $cpass) {
