@@ -4,6 +4,7 @@ ob_start();
 include "model/pdo.php";
 include "model/users.php";
 include "model/categories.php";
+include "model/products.php";
 include "mail/PHPMailer/index.php";
 $mail = new Mailer();
 
@@ -88,6 +89,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'forgetpass':
             include "view/forgetpass.php";
+            break;
+        case 'product-single':
+            include 'view/header.php';            
+            include "view/product-single.php";
+            include 'view/footer.php';
             break;
         default:
             include 'view/header.php';
