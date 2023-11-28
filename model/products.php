@@ -77,4 +77,11 @@ function load_all_thongke()
     $listthongke = pdo_query($sql);
     return $listthongke;
 }
+
+function get_products_limit($start, $limit)
+{
+    $sql = "select * from products where status = 1 order by id desc limit $start, $limit";
+    $dm = pdo_query($sql);
+    return $dm;
+}
 ?>
