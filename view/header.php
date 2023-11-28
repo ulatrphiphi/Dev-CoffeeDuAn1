@@ -78,12 +78,13 @@
         <div class="dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <?php
-            if (isset($_SESSION['user'])) {
-              extract($_SESSION['user']);
+            if (isset($_SESSION['user_id'])) {
+              $user = getUser();
+              $role = getRole();
             ?>
 
               <span class="icon icon-user"></span>
-              <?= $user ?><span class="text-header"></span>
+              <?= 'Xin chào ' . $user['user']?><span class="text-header"></span>
           </a>
 
           <ul class="dropdown-menu">
@@ -92,9 +93,10 @@
             <li><a class="dropdown-item" href="index.php?act=edit_user">Chỉnh Sửa Tài Khoản</a></li>
             <li><a class="dropdown-item" href="index.php?act=order_user">Đơn Hàng của Tôi</a></li>
             <?php
-              if ($role == 1) {
+
+              if ($role['role'] == 1) {
             ?>
-              <li><a class="dropdown-item" href="admin/index.php">Đăng nhập Admin</a></li> <?php } ?>
+              <li><a class="dropdown-item" href="/admin/index.php">Đăng nhập Admin</a></li> <?php } ?>
             <li><a class="dropdown-item" href="index.php?act=logout">Đăng Xuất</a></li>
           </ul>
         <? } else { ?>

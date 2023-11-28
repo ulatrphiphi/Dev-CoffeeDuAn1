@@ -39,6 +39,13 @@ function getUser()
     $selectUser = pdo_query_one($sql);
     return $selectUser;
 }
+function getRole()
+{
+    $user = $_SESSION['user_id'];
+    $sql = "select role from users WHERE id = $user";
+    $selectUser = pdo_query_one($sql);
+    return $selectUser;
+}
 function checkemail($email)
 {
     $sql = "select * from users where email='" . $email . "'";

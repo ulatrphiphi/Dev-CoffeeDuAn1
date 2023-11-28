@@ -44,6 +44,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             if (isset($_POST['login']) && ($_POST['login'])) {
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
+                $role = $_POST['role'];
                 $checkuser = checkuser($user);
                 if ($checkuser) {
                     if (password_verify($pass, $checkuser['pass'])) {
