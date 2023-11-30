@@ -59,16 +59,68 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             include "view/login.php";
             break;
+            // case 'signup':
+            //     if (isset($_POST['signup']) && ($_POST['signup'])) {
+            //         $email = $_POST['email'];
+            //         $user = $_POST['user'];
+            //         $pass = $_POST['pass'];
+            //         $cpass = $_POST['cpass'];
+            //         insert_user($email, $user, $pass, $cpass);
+            //     }
+            //     include 'view/signup.php';
+            //     break;
+
         case 'signup':
             if (isset($_POST['signup']) && ($_POST['signup'])) {
                 $email = $_POST['email'];
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
                 $cpass = $_POST['cpass'];
-                insert_user($email, $user, $pass, $cpass);
+
+                // Thực hiện kiểm tra hợp lệ
+                $errors = array();
+
+                // Kiểm tra email
+                if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $errors[] = 'Email không hợp lệ';
+                }
+
+                // Kiểm tra tên người dùng
+                if (empty($user)) {
+                    $errors[] = 'Tên người dùng không được trống';
+                } elseif (is_user_exists($user)) {
+                    $errors[] = 'Tên người dùng đã tồn tại';
+                }
+
+                // Kiểm tra mật khẩu
+                if (empty($pass)) {
+                    $errors[] = 'Mật khẩu không được trống';
+                }
+
+                // Kiểm tra xác nhận mật khẩu
+                if (empty($cpass)) {
+                    $errors[] = 'Vui lòng xác nhận mật khẩu';
+                } elseif ($pass !== $cpass) {
+                    $errors[] = 'Xác nhận mật khẩu không khớp';
+                }
+
+                // Nếu không có lỗi, thêm người dùng vào cơ sở dữ liệu
+                if (empty($errors)) {
+                    insert_user($email, $user, $pass, $cpass);
+                    header('LOCATION: index.php?act=login');
+                    exit();
+                }
+                // else {
+                //     // Nếu có lỗi, hiển thị thông báo lỗi
+                //     foreach ($errors as $error) {
+                //         echo $error . '<br>';
+                //     }
+                // }
             }
+
             include 'view/signup.php';
             break;
+
         case 'logout':
             session_unset();
             header('LOCATION: index.php?act=home');

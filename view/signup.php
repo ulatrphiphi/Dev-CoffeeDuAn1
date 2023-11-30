@@ -1,17 +1,31 @@
 <?php
-
 if (!empty($_POST)) {
     $error = [];
-    if (empty($_POST['user'])) {
-        $error['user']['required'] = 'Tên đăng nhập không được để trống';
+    if (empty($_POST['email'])) {
+        $error['email']['required'] = 'Email không được để trống';
+    } else {
+        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            $error['email']['invaild'] = 'Email không đúng định dạng';
+        }
     }
 
+    // if (empty($_POST['cpass'])) {
+    //     $error['cpass']['required'] = 'xác nhận mật khẩu';
+    // }
+
+    if (empty($_POST['user'])) {
+        $error['user']['required'] = 'Tên đăng nhập không được để trống';
+    } elseif (is_user_exists($_POST['user'])) {
+        $signupError = 'Tài khoản đã tồn tại'; // Gán giá trị khi tài khoản đã tồn tại
+    }
+
+    // if (empty($_POST['pass'])) {
+    //     $error['pass']['required'] = 'Mật khẩu không được để trống';
+    // }
     if (empty($_POST['pass'])) {
         $error['pass']['required'] = 'Mật khẩu không được để trống';
-    } else {
-        if (strlen($_POST['pass']) < 5) {
-            $error['pass']['invaild'] = 'Mật khẩu phải có ít nhất 5 ký tự';
-        }
+    } elseif ($_POST['pass'] !== $_POST['cpass']) {
+        $error['cpass']['mismatch'] = 'Xác nhận mật khẩu không khớp';
     }
 }
 ?>
@@ -65,23 +79,40 @@ if (!empty($_POST)) {
                             <input class="input100" type="text" name="user" placeholder="Tên đăng Nhập">
                             <span class="focus-input100" data-placeholder="&#xf207;"></span>
                         </div>
+                        <?php echo !empty($error['user']['required']) ? '<p style="color: red;">' . $error['user']['required'] : '';
+                        '</p>' ?>
+                        <?php
+                        // Hiển thị thông báo lỗi khi tài khoản đã tồn tại
+                        echo !empty($signupError) ? '<p style="color: red;">' . $signupError . '</p>' : '';
+                        ?>
 
 
                         <div class="wrap-input100 validate-input" data-validate="Enter email">
-                            <input class="input100" type="email" name="email" placeholder="Email của bạn">
+                            <input class="input100" type="text" name="email" placeholder="Email của bạn">
                             <span class="focus-input100" data-placeholder="&#xf207;"></span>
                         </div>
+                        <?php echo !empty($error['email']['required']) ? '<p style="color: red;">' . $error['email']['required'] : '';
+                        '</p>' ?>
+                        <?php echo !empty($error['email']['invaild']) ? '<p style="color: red;">' . $error['email']['invaild'] : '';
+                        '</p>' ?>
 
 
                         <div class="wrap-input100 validate-input" data-validate="Enter password">
                             <input class="input100" type="password" name="pass" placeholder="Mật Khẩu">
                             <span class="focus-input100" data-placeholder="&#xf191;"></span>
                         </div>
+                        <?php echo !empty($error['pass']['required']) ? '<p style="color: red;">' . $error['pass']['required'] . '</p>' : ''; ?>
+
 
                         <div class="wrap-input100 validate-input" data-validate="Comfirm password">
                             <input class="input100" type="password" name="cpass" placeholder="Nhập lại mật Khẩu">
                             <span class="focus-input100" data-placeholder="&#xf191;"></span>
                         </div>
+                        <?php
+                        echo !empty($error['cpass']['required']) ? '<p style="color: red;">' . $error['cpass']['required'] . '</p>' : '';
+                        echo !empty($error['cpass']['mismatch']) ? '<p style="color: red;">' . $error['cpass']['mismatch'] . '</p>' : '';
+                        ?>
+
 
                         <div class="contact100-form-checkbox">
                             <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">

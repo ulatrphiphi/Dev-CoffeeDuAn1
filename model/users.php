@@ -20,7 +20,7 @@ function insert_user($email, $user, $pass, $cpass)
         $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
         $sql = "insert into users(email,user,pass) values(? , ?,  ?)";
         pdo_execute($sql, $email, $user, $pass_hash);
-        header('LOCATION: index.php?act=login');
+        // header('LOCATION: index.php?act=login');
     } else {
         echo '<script>alert("Mật khẩu nhập lại không đúng")</script>';
     }
@@ -38,6 +38,14 @@ function getUser()
     $sql = "select user from users WHERE id = $user";
     $selectUser = pdo_query_one($sql);
     return $selectUser;
+}
+
+function is_user_exists($username)
+{
+    $sql = "SELECT * FROM users WHERE user = ?";
+    $existingUser = pdo_query_one($sql, $username);
+
+    return !empty($existingUser); // Trả về true nếu người dùng đã tồn tại, ngược lại là false
 }
 function getRole()
 {
