@@ -82,7 +82,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="index.php?act=listpro" class="nav-link">
+              <a href="index.php?act=listpro&page=1" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Danh sách sản phẩm</p>
               </a>
@@ -102,7 +102,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="index.php?act=listcate" class="nav-link">
+              <a href="index.php?act=listcate&page=1" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Danh sách danh mục</p>
               </a>
@@ -121,7 +121,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="index.php?act=listuser" class="nav-link">
+              <a href="index.php?act=listuser&page=1" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Danh sách Khách Hàng</p>
               </a>

@@ -1,5 +1,5 @@
 <div class="card-footer">
-  <a href="index.php?act=listpro"><button type="submit" class="btn btn-primary" style="float:left;">Danh sách sản phẩm</button></a>
+  <a href="index.php?act=listpro&page=1"><button type="submit" class="btn btn-primary" style="float:left;">Danh sách sản phẩm</button></a>
 </div>
 <?php
 ?>

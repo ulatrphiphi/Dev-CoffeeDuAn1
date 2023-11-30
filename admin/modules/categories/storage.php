@@ -1,5 +1,5 @@
 <div class="card-footer">
-  <a href="index.php?act=listcate"><button type="submit" class="btn btn-primary" style="float:left;">Danh sách danh Mục</button></a>
+  <a href="index.php?act=listcate&page=1"><button type="submit" class="btn btn-primary" style="float:left;">Danh sách danh Mục</button></a>
 </div>
 
 <div class="row">
