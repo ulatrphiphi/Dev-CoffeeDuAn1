@@ -74,6 +74,13 @@ function update_products($id, $categories_id, $name, $price, $detail, $img){
     pdo_execute($sql);
 }
 
+function load_product_related($id,$categories_id){
+    $sql="select * from products where categories_id=".$categories_id." AND id <> ".$id;
+    $listproducts=pdo_query($sql); 
+    return $listproducts;
+}
+
+
 function load_all_thongke()
 {
     $sql = "select categories.id as madm, categories.name as tendm, count(products.id) as countsp, min(products.price) as minprice, max(products.price) as maxprice, avg(products.price) as avgprice";

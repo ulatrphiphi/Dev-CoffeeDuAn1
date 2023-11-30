@@ -326,7 +326,7 @@
         echo '
     <div class="col-md-3">
       <div class="menu-entry">
-        <a href="#" class="img" style="background-image: url(' . $img . ')"></a>
+        <a href='.$productlink.' class="img" style="background-image: url(' . $img . ')"></a>
         <div class="text text-center pt-4">
           <h3><a href="#">' . $name . '</a></h3>
           <p class="price"><span>' . $price . '</span></p>

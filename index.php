@@ -92,9 +92,17 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'forgetpass':
             include "view/forgetpass.php";
             break;
-        case 'product-single':
-            include 'view/header.php';            
+        case 'productdetail':
+            include 'view/header.php';
+            if(isset($_GET['id'])&&($_GET['id']>0)){
+                $id=$_GET['id'];  
+                $oneproduct=load_one_products($id);
+                extract($oneproduct);
+                $relatedpro=load_product_related($id,$categories_id);
             include "view/product-single.php";
+            }else{
+                include "view/home.php";
+            }
             include 'view/footer.php';
             break;
         default:
