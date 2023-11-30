@@ -28,7 +28,7 @@
             </div>
             <div class="col-lg-6 product-details pl-md-5 ftco-animate">
               <h1>'.$name.'</h1>
-              <p class="price"><h2>'.$price.'<span>đ</span></h2></p>
+              <p class="price"><h2>'.number_format($price, 0, ',', '.') . '<span>VNĐ</span></h2></p>
               <p style="color:white">'.$detail.'</p>
                   <div class="row mt-4">
                       <div class="col-md-6">
@@ -80,16 +80,16 @@
                         extract($relatedpro);
                         $productlink="index.php?act=productdetail&id=".$id;
                         $img='admin/uploads/'.$img;
-                        echo '<div class="col-md-3">
-                        <div class="menu-entry">
-                            <a><img class="img" src="'.$img.'"></a>
-                            <div class="text text-center pt-4">
-                            <h3><a href="">'.$name.'</a></h3>
-                            <p><span>'.$price.'</span></p>
-                            <p><a href="'.$productlink.'" class="btn btn-primary btn-outline-primary">Xem chỉ tiết</a></p>
+                        echo '<div class="col-md-4 text-center">
+                        <div class="menu-wrap">
+                          <a href="'.$productlink.'" class="menu-img img mb-4" style="background-image: url( '.$img.');"></a>
+                          <div class="text">
+                            <h3><a href="'.$productlink.'">'.$name.'</a></h3>
+                            <p class="price"><span>'.number_format($price, 0, ',', '.').' VNĐ</span></p>
+                            <p><a href="'.$productlink.'" class="btn btn-primary btn-outline-primary">Xem chi tiết</a></p>
+                          </div>
                         </div>
-                        </div>
-                        </div>';
+                      </div>';
                     }
                 ?>
           
@@ -97,3 +97,4 @@
   </div>
   </div>
 </section>
+

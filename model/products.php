@@ -22,6 +22,8 @@ function show_all_products(){
     $showproducts = pdo_query($sql);
     return $showproducts;
 }
+
+
 function load_all_products($kyw="", $categories_id=0){
     $sql="select * from products where 1";
     if($kyw!=""){
@@ -80,7 +82,7 @@ function update_products($id, $categories_id, $name, $price, $detail, $img){
 }
 
 function load_product_related($id,$categories_id){
-    $sql="select * from products where categories_id=".$categories_id." AND id <> ".$id;
+    $sql = "SELECT * FROM products WHERE categories_id = " . $categories_id . " AND id <> " . $id . " LIMIT 0, 3";
     $listproducts=pdo_query($sql); 
     return $listproducts;
 }
