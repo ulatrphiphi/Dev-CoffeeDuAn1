@@ -12,8 +12,13 @@ function restore_products($id){
     $sql = "update products set status = 1 where id =" . $id;
     pdo_execute($sql);
 }
-function show_all_products(){
+function show_news_products(){
     $sql = "select * from products where status = 1 order by id desc limit 0,4";
+    $showproducts = pdo_query($sql);
+    return $showproducts;
+}
+function show_all_products(){
+    $sql = "select * from products where status = 1 order by id desc";
     $showproducts = pdo_query($sql);
     return $showproducts;
 }

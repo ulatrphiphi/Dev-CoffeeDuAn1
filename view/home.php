@@ -329,9 +329,9 @@
         <a href='.$productlink.' class="img" style="background-image: url(' . $img . ')"></a>
         <div class="text text-center pt-4">
           <h3><a href="#">' . $name . '</a></h3>
-          <p class="price"><span>' . $price . '</span></p>
+          <p class="price"><span>' . number_format($price, 0, ',', '.') . ' VNĐ</span></p>
           <p>
-            <a href="#" class="btn btn-primary btn-outline-primary">Thêm Vào Giỏ Hàng</a>
+            <a href="'.$productlink.'" class="btn btn-primary btn-outline-primary">Xem chi tiết</a>
           </p>
         </div>
       </div>
@@ -489,7 +489,7 @@
   <div class="container-wrap">
     <div class="row no-gutters d-md-flex align-items-center">
       <div class="col-md-6 d-flex align-self-stretch">
-       <img src="/view/images/bg_1.jpg" alt="" width="100%">      
+        <img src="/view/images/bg_1.jpg" alt="" width="100%">
       </div>
       <div class="col-md-6 appointment ftco-animate">
         <h3 class="mb-3">Đặt bàn</h3>

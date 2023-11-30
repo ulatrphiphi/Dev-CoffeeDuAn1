@@ -8,7 +8,8 @@ include "model/products.php";
 include "global.php";
 include "mail/PHPMailer/index.php";
 $mail = new Mailer();
-$newproducts = show_all_products();
+$newproducts = show_news_products();
+$allproducts = show_all_products();
 
 
 
