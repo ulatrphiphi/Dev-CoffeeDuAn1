@@ -31,7 +31,6 @@ if (is_file($img_path)) {
                         extract($categories);
                         echo '<option value="' . $id . '">' . $name . '</option>';
                     } ?>
-
                 </select>
             </div>
             <div class="form-group">

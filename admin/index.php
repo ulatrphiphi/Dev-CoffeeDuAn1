@@ -202,10 +202,33 @@ include '../model/users.php';
                 $listuser = loadall_user();
                 include "modules/user/list.php";
                 break;
-                case 'storageuser':
-                  $listdeleteuser = load_deleted_user();
-                  include "modules/user/storage.php";
-                  break;
+              case 'storageuser':
+                $listdeleteuser = load_deleted_user();
+                include "modules/user/storage.php";
+                break;
+              case 'restoreuser':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                  restore_user($_GET['id']);
+                }
+                $listdeleteuser = load_deleted_user();
+                include "modules/user/storage.php";
+                break;
+              case "edituser":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                  $user = load_one_user($_GET['id']);
+                }
+                include "modules/user/edit.php";
+                break;
+              case 'updateuser':
+                if (isset($_POST['update']) && ($_POST['update'])) {
+                  $role = $_POST['role'];
+                  $id = $_POST['id'];
+                  update_role($id,$role);
+                  $alert = "Cập nhật thành công!";
+                }
+                $listuser = loadall_user();
+                include 'modules/user/list.php';
+                break;
                 // Order
               case "listorder":
                 include "modules/orders/list.php";

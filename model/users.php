@@ -7,13 +7,19 @@ function loadall_user()
     return $listuser;
 }
 
+function load_one_user($id)
+{
+    $sql = "select id, user, role from users where id = $id";
+    $listuser = pdo_query_one($sql);
+    return $listuser;
+}
+
 function load_deleted_user()
 {
     $sql = "select * from users where status = 0 order by id desc";
     $list_user = pdo_query($sql);
     return $list_user;
 }
-
 function insert_user($email, $user, $pass, $cpass)
 {
     if ($pass === $cpass) {
@@ -25,7 +31,11 @@ function insert_user($email, $user, $pass, $cpass)
         echo '<script>alert("Mật khẩu nhập lại không đúng")</script>';
     }
 }
-
+function update_role($id,$role)
+{
+    $sql = "update users set role = '" . $role . "' where id =" . $id;
+    pdo_execute($sql);
+}
 function checkuser($user)
 {
     $sql = "select * from users where user = '" . $user . "'";
@@ -77,5 +87,11 @@ function update_user($id, $user, $pass, $email, $address, $tel)
 function delete_user($id)
 {
     $sql = "update users set status = 0 where id=" . $id;
+    pdo_execute($sql);
+}
+
+function restore_user($id)
+{
+    $sql = "update users set status = 1 where id =" . $id;
     pdo_execute($sql);
 }
