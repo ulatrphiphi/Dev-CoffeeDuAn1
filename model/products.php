@@ -64,16 +64,14 @@ function load_one_products($id)
     $products = pdo_query_one($sql);
     return $products;
 }
-function load_ten_dm($categories_id)
-{
-    if ($categories_id > 0) {
-        $sql = "select * from categories where id=" . $categories_id;
-        $dm = pdo_query_one($sql);
-        extract($dm);
-        return $name;
-    } else {
-        return "";
-    }
+function load_name_categories($categories_id){
+    if($categories_id>0){
+    $sql="select * from categories where id=".$categories_id;
+    $categories=pdo_query_one($sql);
+    extract($categories);
+    return $name;
+}else{
+    return "";
 }
 function load_products_by_categories($id, $categories_id)
 {
@@ -92,10 +90,9 @@ function update_products($id, $categories_id, $name, $price, $detail, $img)
     pdo_execute($sql);
 }
 
-function load_product_related($id, $categories_id)
-{
-    $sql = "SELECT * FROM products WHERE categories_id = " . $categories_id . " AND id <> " . $id . " LIMIT 0, 3";
-    $listproducts = pdo_query($sql);
+function load_product_related($id, $categories_id){
+    $sql = "SELECT * FROM products WHERE categories_id = " . $categories_id . " AND id <> " . $id . " AND status >= 1 LIMIT 0,3";
+    $listproducts = pdo_query($sql); 
     return $listproducts;
 }
 
