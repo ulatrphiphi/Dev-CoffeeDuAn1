@@ -89,7 +89,7 @@
 	<div class="container">
 		<div class="row">
 
-			<h3 class="mb-5 heading-pricing ftco-animate">Starter</h3>
+			<h3 class="mb-5 heading-pricing ftco-animate">Sản phẩm nổi bật</h3>
 			<?php
 			$i = 0;
 			foreach ($newproducts as $product) {
@@ -124,9 +124,8 @@
 	<div class="container">
 		<div class="row justify-content-center mb-5">
 			<div class="col-md-7 heading-section text-center ftco-animate">
-				<span class="subheading">Discover</span>
-				<h2 class="mb-4">Our Products</h2>
-				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+				<span class="subheading">Khám phá</span>
+				<h2 class="mb-4">Sản phẩm của chúng tôi</h2>
 			</div>
 		</div>
 		<div class="row d-md-flex">
