@@ -10731,12 +10731,12 @@ h5,
 .menu-wrap .text .price span {
   color: #fff;
 }
-
 .ftco-appointment {
   width: 100%;
   position: relative;
-  background: #000;
+  background: #fff; /* Màu trắng */
 }
+
 .ftco-appointment .overlay {
   position: absolute;
   top: 0;
@@ -10750,13 +10750,15 @@ h5,
 .appointment {
   padding: 20px !important;
 }
+
 @media (min-width: 768px) {
   .appointment {
     padding: 7% 12% 7% 5% !important;
   }
 }
+
 .appointment h3 {
-  color: #fff;
+  color: #000; /* Màu đen */
 }
 
 .appointment-form .form-group {
@@ -10764,6 +10766,7 @@ h5,
   width: 100%;
   display: block;
 }
+
 .appointment-form .form-group .icon {
   position: absolute;
   top: 50% !important;
@@ -10773,19 +10776,23 @@ h5,
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
 .appointment-form .form-group .icon span {
-  color: white !important;
+  color: #000 !important; /* Màu đen */
 }
+
 .appointment-form .form-group .select-wrap,
 .appointment-form .form-group .input-wrap {
   position: relative;
 }
+
 .appointment-form .form-group .select-wrap select,
 .appointment-form .form-group .input-wrap select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
+
 .appointment-form .form-group .btn {
   width: 100%;
   display: block !important;
@@ -10793,41 +10800,47 @@ h5,
 
 .appointment-form .form-control {
   border: transparent !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important; /* Đổi màu đen */
   height: 58px !important;
   padding-left: 0;
   padding-right: 0;
   background: transparent !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(0, 0, 0, 0.9) !important; /* Đổi màu đen */
   font-size: 13px;
   border-radius: 0px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
+
 .appointment-form .form-control::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.9); /* Đổi màu đen */
 }
+
 .appointment-form .form-control::-moz-placeholder {
   /* Firefox 19+ */
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.9); /* Đổi màu đen */
 }
+
 .appointment-form .form-control:-ms-input-placeholder {
   /* IE 10+ */
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.9); /* Đổi màu đen */
 }
+
 .appointment-form .form-control:-moz-placeholder {
   /* Firefox 18- */
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.9); /* Đổi màu đen */
 }
+
 .appointment-form .form-control:focus,
 .appointment-form .form-control:active {
-  border-color: #fff;
+  border-color: #000; /* Đổi màu đen */
 }
 
 .appointment-form textarea.form-control {
   height: inherit !important;
 }
+
 
 .staff {
   padding: 25px;

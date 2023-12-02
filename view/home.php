@@ -326,12 +326,12 @@
         echo '
     <div class="col-md-3">
       <div class="menu-entry">
-        <a href='.$productlink.' class="img" style="background-image: url(' . $img . ')"></a>
+        <a href=' . $productlink . ' class="img" style="background-image: url(' . $img . ')"></a>
         <div class="text text-center pt-4">
           <h3><a href="#">' . $name . '</a></h3>
           <p class="price"><span>' . number_format($price, 0, ',', '.') . ' VNĐ</span></p>
           <p>
-            <a href="'.$productlink.'" class="btn btn-primary btn-outline-primary">Xem chi tiết</a>
+            <a href="' . $productlink . '" class="btn btn-primary btn-outline-primary">Xem chi tiết</a>
           </p>
         </div>
       </div>
@@ -496,9 +496,16 @@
         <form action="#" class="appointment-form">
           <div class="d-md-flex">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Họ và tên" />
+              <input type="text" class="form-control" name="full_name" placeholder="Họ và tên" />
             </div>
-
+            <div class="form-group ml-md-4">
+              <input type="tel" class="form-control" name="phone_number" placeholder="Số Điện Thoại" />
+            </div>
+          </div>
+          <div class="d-md-flex">
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" placeholder="Email" />
+            </div>
           </div>
           <div class="d-md-flex">
             <div class="form-group">
@@ -506,29 +513,49 @@
                 <div class="icon">
                   <span class="ion-md-calendar"></span>
                 </div>
-                <input type="text" class="form-control appointment_date" placeholder="Ngày" />
+                <input type="date" class="form-control appointment_date" name="booking_date" placeholder="Ngày" />
               </div>
             </div>
             <div class="form-group ml-md-4">
               <div class="input-wrap">
-                <div class="icon"><span class="ion-ios-clock"></span></div>
-                <input type="text" class="form-control appointment_time" placeholder="Thời Gian" />
+                <div class="icon">
+                  <span class="ion-ios-clock"></span>
+                </div>
+                <select class="form-control appointment_time" name="booking_time">
+                  <?php
+                  $start_time = strtotime("08:00 AM"); // Giờ bắt đầu
+                  $end_time = strtotime("08:00 PM"); // Giờ kết thúc
+                  $interval = 30 * 60; // Cách nhau 30 phút
+
+                  while ($start_time <= $end_time) {
+                    $formatted_time = date("h:i A", $start_time);
+                    echo '<option value="' . date("H:i", $start_time) . '">' . $formatted_time . '</option>';
+                    $start_time += $interval;
+                  }
+                  ?>
+                </select>
               </div>
             </div>
             <div class="form-group ml-md-4">
-              <input type="text" class="form-control" placeholder="Số Điện Thoại" />
+              <select class="form-control" name="number_of_people">
+                <!-- Chọn số người từ 1 đến 10 -->
+                <?php for ($i = 1; $i <= 10; $i++) { ?>
+                  <option value="<?php echo $i; ?>"><?php echo $i; ?> Người</option>
+                <?php } ?>
+              </select>
             </div>
           </div>
           <div class="d-md-flex">
             <div class="form-group">
-              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Ghi chú"></textarea>
+              <textarea name="note" cols="30" rows="2" class="form-control" placeholder="Ghi chú"></textarea>
             </div>
             <div class="form-group ml-md-4">
-              <input type="submit" value="Đặt Hẹn" class="btn btn-primary py-3 px-4" />
+              <input type="submit" value="Đặt Hẹn" name="oder" class="btn btn-primary py-3 px-4" />
             </div>
           </div>
         </form>
       </div>
+
     </div>
   </div>
 </section>
