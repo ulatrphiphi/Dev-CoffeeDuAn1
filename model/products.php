@@ -73,6 +73,7 @@ function load_name_categories($categories_id){
 }else{
     return "";
 }
+}
 function load_products_by_categories($id, $categories_id)
 {
     $sql = "select * from products where status and categories_id=" . $categories_id . " AND id <> " . $id;
