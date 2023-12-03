@@ -59,7 +59,7 @@
           <li class="nav-item">
             <a href="index.php?act=about" class="nav-link">Về chúng tôi</a>
           </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
             <div class="dropdown-menu" aria-labelledby="dropdown04">
               <a class="dropdown-item" href="/view/shop.html">Shop</a>
@@ -67,12 +67,12 @@
               <a class="dropdown-item" href="/view/room.html">Cart</a>
               <a class="dropdown-item" href="/view/checkout.html">Checkout</a>
             </div>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="index.php?act=contact" class="nav-link">Liên hệ</a>
           </li>
           <li class="nav-item cart">
-            <a href="index.php?act=cart" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a>
+            <a href="#" class="nav-link"><span class="icon icon-search"></span></a>
           </li>
         </ul>
         <div class="dropdown">
