@@ -72,7 +72,7 @@
             <a href="index.php?act=contact" class="nav-link">Liên hệ</a>
           </li>
           <li class="nav-item cart">
-            <a href="/view/cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a>
+            <a href="index.php?act=cart" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a>
           </li>
         </ul>
         <div class="dropdown">

@@ -5,12 +5,15 @@ include "model/pdo.php";
 include "model/users.php";
 include "model/categories.php";
 include "model/products.php";
+include "model/cart.php";
 include "global.php";
 include "mail/PHPMailer/index.php";
 $mail = new Mailer();
 $newproducts = show_news_products();
 $allproducts = show_all_products();
 
+
+if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
 
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
@@ -41,6 +44,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include 'view/contact.php';
             include 'view/footer.php';
             break;
+        case 'cart':
+            include 'view/header.php';
+            include 'view/cart.php';
+            include 'view/footer.php';
+            break;
+        
         case 'login':
             if (isset($_POST['login']) && ($_POST['login'])) {
                 $user = $_POST['user'];
