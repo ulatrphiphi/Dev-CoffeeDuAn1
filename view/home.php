@@ -521,7 +521,7 @@
                 <div class="icon">
                   <span class="ion-ios-clock"></span>
                 </div>
-                <select class="form-control appointment_time" name="booking_time">
+                <select class="form-control" name="booking_time">
                   <?php
                   $start_time = strtotime("08:00 AM"); // Giờ bắt đầu
                   $end_time = strtotime("08:00 PM"); // Giờ kết thúc

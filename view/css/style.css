@@ -12091,3 +12091,7 @@ textarea.form-control {
 .dropdown {
   background-color: none !important;
 }
+
+.map{
+  border-radius: 0.8rem;
+}
