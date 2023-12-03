@@ -25,59 +25,9 @@
           </div>
           <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Bài viết gần đây</h2>
-              <div class="block-21 mb-4 d-flex">
-                <a
-                  class="blog-img mr-4"
-                  style="background-image: url(/view/images/image_1.jpg)"
-                ></a>
-                <div class="text">
-                  <h3 class="heading">
-                    <a href="#"
-                      >Even the all-powerful Pointing has no control about</a
-                    >
-                  </h3>
-                  <div class="meta">
-                    <div>
-                      <a href="#"
-                        ><span class="icon-calendar"></span> Sept 15, 2018</a
-                      >
-                    </div>
-                    <div>
-                      <a href="#"><span class="icon-person"></span> Admin</a>
-                    </div>
-                    <div>
-                      <a href="#"><span class="icon-chat"></span> 19</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a
-                  class="blog-img mr-4"
-                  style="background-image: url(/view/images/image_2.jpg)"
-                ></a>
-                <div class="text">
-                  <h3 class="heading">
-                    <a href="#"
-                      >Even the all-powerful Pointing has no control about</a
-                    >
-                  </h3>
-                  <div class="meta">
-                    <div>
-                      <a href="#"
-                        ><span class="icon-calendar"></span> Sept 15, 2018</a
-                      >
-                    </div>
-                    <div>
-                      <a href="#"><span class="icon-person"></span> Admin</a>
-                    </div>
-                    <div>
-                      <a href="#"><span class="icon-chat"></span> 19</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <h2 class="ftco-heading-2">Cơ sở hiện tại</h2>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.4089643354732!2d105.75547457487112!3d9.983036690121459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a08906415c355f%3A0x416815a99ebd841e!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYw!5e0!3m2!1svi!2s!4v1701593556527!5m2!1svi!2s" 
+                width="350" height="250" style="border:0;" class="map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
           <div class="col-lg-2 col-md-6 mb-5 mb-md-5">

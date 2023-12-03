@@ -89,8 +89,8 @@ include '../model/users.php';
                   } else {
                   }
                   // insert_products($iddm, $tensp, $giasp, $hinh, $mota);
-                  insert_products($categories_id, $name, $price, $img, $detail);
-                  $thongbao = "Thêm thành công";
+                  
+                  // $thongbao = "Thêm thành công";
                 }
                 $list_categories = load_all_categories();
                 include "modules/products/add.php";
