@@ -27,9 +27,10 @@ if (is_file($img_path)) {
             <div class="form-group">
                 <label>Danh mục</label>
                 <select name="categories_id" class="form-control" id="">
-                    <?php foreach ($list_categories as $categories) {
-                        extract($categories);
-                        echo '<option value="' . $id . '">' . $name . '</option>';
+                    <?php foreach ($list_categories as $category) {
+                        extract($category);
+                        $selected = ($id == $categories_id) ? 'selected' : '';
+                        echo '<option value="' . $id . '" ' . $selected . '>' . $name . '</option>';
                     } ?>
                 </select>
             </div>
