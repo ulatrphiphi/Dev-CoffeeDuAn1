@@ -6,6 +6,7 @@ include "model/users.php";
 include "model/categories.php";
 include "model/products.php";
 include "model/cart.php";
+include "model/book.php";
 include "global.php";
 include "mail/PHPMailer/index.php";
 $mail = new Mailer();
@@ -166,6 +167,23 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "view/home.php";
             }
             include 'view/footer.php';
+            break;
+        case'booking':
+            if (isset($_POST['order']) && ($_POST['order'])) {
+                $name = $_POST['full_name'];
+                $tel = $_POST['phone_number'];
+                $email=$_POST['email'];
+                $date=$_POST['booking_date'];
+                $customers = $_POST['number_of_people'];
+                $note=$_POST['note'];
+                booking( $name, $tel, $date, $customers, $note);
+                echo '<script>alert("Đặt bàn thành công!, xin cảm ơn quý khách ")</script>';
+                echo '<script>
+                        setTimeout(function() {
+                            window.location.href = "index.php?act=home";
+                        }, 0);
+                    </script>';
+            }
             break;
         default:
             include 'view/header.php';

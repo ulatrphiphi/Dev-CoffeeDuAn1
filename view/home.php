@@ -88,20 +88,13 @@
           </div>
         </div>
       </div>
-      <div class="book p-4">
+      <!-- <div class="book p-4">
         <h3>Đặt Bàn</h3>
         <form action="#" class="appointment-form">
           <div class="d-md-flex">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Họ và Tên" />
             </div>
-            <!-- <div class="form-group ml-md-4">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Tên"
-                  />
-                </div> -->
           </div>
           <div class="d-md-flex">
             <div class="form-group">
@@ -131,7 +124,7 @@
             </div>
           </div>
         </form>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -493,7 +486,7 @@
       </div>
       <div class="col-md-6 appointment ftco-animate">
         <h3 class="mb-3">Đặt bàn</h3>
-        <form action="#" class="appointment-form">
+        <form action="index.php?act=booking" method="POST" class="appointment-form">
           <div class="d-md-flex">
             <div class="form-group">
               <input type="text" class="form-control" name="full_name" placeholder="Họ và tên" />
@@ -510,32 +503,32 @@
           <div class="d-md-flex">
             <div class="form-group">
               <div class="input-wrap">
-                <div class="icon">
+                <!-- <div class="icon">
                   <span class="ion-md-calendar"></span>
-                </div>
-                <input type="date" class="form-control appointment_date" name="booking_date" placeholder="Ngày" />
+                </div> -->
+                <input type="datetime-local" class="form-control" name="booking_date" placeholder="Ngày" />
               </div>
             </div>
-            <div class="form-group ml-md-4">
+            <!-- <div class="form-group ml-md-4">
               <div class="input-wrap">
                 <div class="icon">
                   <span class="ion-ios-clock"></span>
                 </div>
                 <select class="form-control" name="booking_time">
                   <?php
-                  $start_time = strtotime("08:00 AM"); // Giờ bắt đầu
-                  $end_time = strtotime("08:00 PM"); // Giờ kết thúc
-                  $interval = 30 * 60; // Cách nhau 30 phút
+                  // $start_time = strtotime("08:00 AM"); // Giờ bắt đầu
+                  // $end_time = strtotime("08:00 PM"); // Giờ kết thúc
+                  // $interval = 30 * 60; // Cách nhau 30 phút
 
-                  while ($start_time <= $end_time) {
-                    $formatted_time = date("h:i A", $start_time);
-                    echo '<option value="' . date("H:i", $start_time) . '">' . $formatted_time . '</option>';
-                    $start_time += $interval;
-                  }
+                  // while ($start_time <= $end_time) {
+                  //   $formatted_time = date("h:i A", $start_time);
+                  //   echo '<option value="' . date("H:i", $start_time) . '">' . $formatted_time . '</option>';
+                  //   $start_time += $interval;
+                  // }
                   ?>
                 </select>
               </div>
-            </div>
+            </div> -->
             <div class="form-group ml-md-4">
               <select class="form-control" name="number_of_people">
                 <!-- Chọn số người từ 1 đến 10 -->
@@ -550,7 +543,8 @@
               <textarea name="note" cols="30" rows="2" class="form-control" placeholder="Ghi chú"></textarea>
             </div>
             <div class="form-group ml-md-4">
-              <input type="submit" value="Đặt Hẹn" name="oder" class="btn btn-primary py-3 px-4" />
+              <input type="hidden" name="users_id" >
+              <input type="submit" value="Đặt Hẹn" name="order" class="btn btn-primary py-3 px-4" />
             </div>
           </div>
         </form>
