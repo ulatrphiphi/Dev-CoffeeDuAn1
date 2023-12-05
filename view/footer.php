@@ -112,6 +112,79 @@
       </svg>
     </div>
 
+   
+<script>
+    // Configs
+    let liveChatBaseUrl   = document.location.protocol + '//' + 'livechat.fpt.ai/v36/src'
+    let LiveChatSocketUrl = 'livechat.fpt.ai:443'
+    let FptAppCode        = 'cb83484d8e29f44a7be4b529dce72e2c'
+    let FptAppName        = 'Dev-Coffee'
+    // Define custom styles
+    let CustomStyles = {
+        // header
+        headerBackground: 'linear-gradient(86.7deg, #DAD460FF 0.85%, #FFD86FFF 98.94%)',
+        headerTextColor: '#000000FF',
+        headerLogoEnable: false,
+        headerLogoLink: 'https://chatbot-tools.fpt.ai/livechat-builder/img/Icon-fpt-ai.png',
+        headerText: 'Dev-Coffee',
+        // main
+        primaryColor: '#000000FF',
+        secondaryColor: '#ecececff',
+        primaryTextColor: '#FFFFFFFF',
+        secondaryTextColor: '#000000DE',
+        buttonColor: '#b4b4b4ff',
+        buttonTextColor: '#ffffffff',
+        bodyBackgroundEnable: false,
+        bodyBackgroundLink: '',
+        avatarBot: 'https://cdn.icon-icons.com/icons2/510/PNG/512/coffee_icon-icons.com_50414.png',
+        sendMessagePlaceholder: '',
+        // float button
+        floatButtonLogo: 'https://www.iconarchive.com/download/i86695/johanchalibert/mac-osx-yosemite/messages.1024.png',
+        floatButtonTooltip: 'Tôi có thể giúp gì cho bạn',
+        floatButtonTooltipEnable: true,
+        // start screen
+        customerLogo: 'https://cdn.icon-icons.com/icons2/510/PNG/512/coffee_icon-icons.com_50414.png',
+        customerWelcomeText: 'Hãy nhập tên của bạn',
+        customerButtonText: 'Bắt đầu',
+        prefixEnable: false,
+        prefixType: 'radio',
+        prefixOptions: ["Anh","Chị"],
+        prefixPlaceholder: 'Danh xưng',
+        // custom css
+        css: ''
+    }
+    // Get bot code from url if FptAppCode is empty
+    if (!FptAppCode) {
+        let appCodeFromHash = window.location.hash.substr(1)
+        if (appCodeFromHash.length === 32) {
+            FptAppCode = appCodeFromHash
+        }
+    }
+    // Set Configs
+    let FptLiveChatConfigs = {
+        appName: FptAppName,
+        appCode: FptAppCode,
+        themes : '',
+        styles : CustomStyles
+    }
+    // Append Script
+    let FptLiveChatScript  = document.createElement('script')
+    FptLiveChatScript.id   = 'fpt_ai_livechat_script'
+    FptLiveChatScript.src  = liveChatBaseUrl + '/static/fptai-livechat.js'
+    document.body.appendChild(FptLiveChatScript)
+    // Append Stylesheet
+    let FptLiveChatStyles  = document.createElement('link')
+    FptLiveChatStyles.id   = 'fpt_ai_livechat_script'
+    FptLiveChatStyles.rel  = 'stylesheet'
+    FptLiveChatStyles.href = liveChatBaseUrl + '/static/fptai-livechat.css'
+    document.body.appendChild(FptLiveChatStyles)
+    // Init
+    FptLiveChatScript.onload = function () {
+        fpt_ai_render_chatbox(FptLiveChatConfigs, liveChatBaseUrl, LiveChatSocketUrl)
+    }
+</script>
+
+
     <script src="/view/js/jquery.min.js"></script>
     <script src="/view/js/jquery-migrate-3.0.1.min.js"></script>
     <script src="/view/js/popper.min.js"></script>
