@@ -175,7 +175,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $date=$_POST['booking_date'];
                 $customers = $_POST['number_of_people'];
                 $note=$_POST['note'];
-                booking( $name, $tel, $date, $customers, $note);
+                booking( $name, $tel, $email, $date, $customers, $note);
                 echo '<script>alert("Đặt bàn thành công!, xin cảm ơn quý khách ")</script>';
                 echo '<script>
                         setTimeout(function() {

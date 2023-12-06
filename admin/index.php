@@ -3,6 +3,7 @@ include "../model/pdo.php";
 include "../model/categories.php";
 include "../model/products.php";
 include '../model/users.php';
+include '../model/book.php';
 ?>
 
 <!DOCTYPE html>
@@ -231,7 +232,8 @@ include '../model/users.php';
                 break;
                 // Order
               case "listorder":
-                include "modules/orders/list.php";
+                $listorder = load_all_order();
+                include "modules/order/list.php";
                 break;
               case "addorder":
                 include "modules/orders/add.php";
