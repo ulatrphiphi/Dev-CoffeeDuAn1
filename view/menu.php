@@ -16,73 +16,75 @@
 </section>
 
 <section class="ftco-intro">
-	<div class="container-wrap">
-		<div class="wrap d-md-flex align-items-xl-end">
-			<div class="info">
-				<div class="row no-gutters">
-					<div class="col-md-4 d-flex ftco-animate">
-						<div class="icon"><span class="icon-phone"></span></div>
-						<div class="text">
-							<h3>SĐT</h3>
-							<p>+84 935 631 822</p>
-						</div>
-					</div>
-					<div class="col-md-4 d-flex ftco-animate">
-						<div class="icon"><span class="icon-my_location"></span></div>
-						<div class="text">
-							<h3>Địa Chỉ</h3>
-							<p>Đ. Số 22, Thường Thạnh, Cái Răng, Cần Thơ</p>
-						</div>
-					</div>
-					<div class="col-md-4 d-flex ftco-animate">
-						<div class="icon"><span class="icon-clock-o"></span></div>
-						<div class="text">
-							<h3>Mở Cửa Mỗi Ngày</h3>
-							<p>8:00am - 9:00pm</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="book p-4">
-				<h3>Liên hệ đặt bàn</h3>
-				<form action="#" class="appointment-form">
-					<div class="d-md-flex">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Họ">
-						</div>
-						<div class="form-group ml-md-4">
-							<input type="text" class="form-control" placeholder="Tên">
-						</div>
-					</div>
-					<div class="d-md-flex">
-						<div class="form-group">
-							<div class="input-wrap">
-								<div class="icon"><span class="ion-md-calendar"></span></div>
-								<input type="text" class="form-control appointment_date" placeholder="Ngày Đặt">
-							</div>
-						</div>
-						<div class="form-group ml-md-4">
-							<div class="input-wrap">
-								<div class="icon"><span class="ion-ios-clock"></span></div>
-								<input type="text" class="form-control appointment_time" placeholder="Thời Gian">
-							</div>
-						</div>
-						<div class="form-group ml-md-4">
-							<input type="text" class="form-control" placeholder="Số Điện Thoại">
-						</div>
-					</div>
-					<div class="d-md-flex">
-						<div class="form-group">
-							<textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Lời nhắn"></textarea>
-						</div>
-						<div class="form-group ml-md-4">
-							<input type="submit" value="Đặt Bàn" class="btn btn-white py-3 px-4">
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+  <div class="container-wrap">
+    <div class="wrap d-md-flex align-items-xl-end">
+      <div class="info">
+        <div class="row no-gutters">
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="icon"><span class="icon-phone"></span></div>
+            <div class="text">
+              <h3>+84 934 789 999</h3>
+              <p>
+                Liên hệ Hotline để khiếu nại hoặc đóng góp ý kiến.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="icon"><span class="icon-my_location"></span></div>
+            <div class="text">
+              <h3>Khu Dân Cư Hoàng Quân, Cái Răng, Cần Thơ</h3>
+              <p>
+                Đ. Số 22, Thường Thạnh, Cái Răng, Cần Thơ </p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="icon"><span class="icon-clock-o"></span></div>
+            <div class="text">
+              <h3>Mở Cửa Tất Cả Các Ngày Trong Tuần.</h3>
+              <p>8:30am - 23:00pm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="book p-4">
+        <h3>Đặt Bàn</h3>
+        <form action="#" class="appointment-form">
+          <div class="d-md-flex">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Họ và Tên" />
+            </div>
+          </div>
+          <div class="d-md-flex">
+            <div class="form-group">
+              <div class="input-wrap">
+                <div class="icon">
+                  <span class="ion-md-calendar"></span>
+                </div>
+                <input type="text" class="form-control appointment_date" placeholder="Ngày" />
+              </div>
+            </div>
+            <div class="form-group ml-md-4">
+              <div class="input-wrap">
+                <div class="icon"><span class="ion-ios-clock"></span></div>
+                <input type="text" class="form-control appointment_time" placeholder="Thời Gian" />
+              </div>
+            </div>
+            <div class="form-group ml-md-4">
+              <input type="text" class="form-control" placeholder="Số Điện Thoại" />
+            </div>
+          </div>
+          <div class="d-md-flex">
+            <div class="form-group">
+              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Ghi Chú"></textarea>
+            </div>
+            <div class="form-group ml-md-4">
+              <input type="submit" value="Đặt Hẹn" class="btn btn-white py-3 px-4" />
+            </div>
+          </div>
+        </form>
+      </div> -->
+    </div>
+  </div>
 </section>
 
 <section class="ftco-section">
