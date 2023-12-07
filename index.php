@@ -179,7 +179,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 echo '<script>alert("Đặt bàn thành công!, xin cảm ơn quý khách ")</script>';
                 echo '<script>
                         setTimeout(function() {
-                            window.location.href = "index.php?act=home";
+                            window.location.href = "index.php?act=billcomfirm";
                         }, 0);
                     </script>';
             }
