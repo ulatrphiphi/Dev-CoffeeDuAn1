@@ -81,11 +81,13 @@
                         Số người: '.$customers.'<br>
                         Tổng tiền: ' . number_format($total, 0, ',', '.') . ' VNĐ<br>
                     </td>
-                    <td>Thanh toán trực tiếp</td>
+                    <td>Đang xử lí</td>
                     <td>
-                    <select name="" id="" class="btn btn-primary">
-                    <option value="0" selected>Thanh toán trực tiếp</option>
-                    <option value="1" selected>Thanh toán online</option>
+                    <select name="" id="" class="btn btn-primary" style="margin:10px">
+                    <option value="0" selected>Đơn hàng mới</option>
+                    <option value="1" selected>Đang xử lí</option>
+                    <option value="2" selected>Đã thanh toán</option>
+                    <option value="3" selected>Đã hủy đơn</option>
                       <a href=""><input type="button" class="btn btn-danger" value="Xem"></a>
                       </td>
                   </tr>
