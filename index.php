@@ -180,6 +180,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     </script>';
             }
             break;
+
+            case "mybill":
+                $listorder = load_all_order();
+                include "view/mybill.php";
+                break;
         default:
             include 'view/header.php';
             include 'view/home.php';

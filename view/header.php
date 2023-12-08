@@ -91,7 +91,7 @@
             <!-- <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
               <li><a class="dropdown-item" href="#">Đơn hàng của bạn</a></li> -->
             <li><a class="dropdown-item" href="index.php?act=edit_user">Chỉnh Sửa Tài Khoản</a></li>
-            <li><a class="dropdown-item" href="index.php?act=order_user">Đơn Hàng của Tôi</a></li>
+            <li><a class="dropdown-item" href="index.php?act=mybill">Đơn Hàng của Tôi</a></li>
             <?php
 
               if ($role['role'] == 1) {
