@@ -185,6 +185,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $listorder = load_all_order();
                 include "view/mybill.php";
                 break;
+            case "billcomfirm":
+                include "view/billcomfirm.php";
+                break;
         default:
             include 'view/header.php';
             include 'view/home.php';
