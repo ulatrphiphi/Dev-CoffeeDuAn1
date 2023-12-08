@@ -14,7 +14,7 @@ $newproducts = show_news_products();
 $allproducts = show_all_products();
 
 
-if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
+if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 
 
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
@@ -50,18 +50,24 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include 'view/cart.php';
             include 'view/footer.php';
             break;
-        
+
         case 'login':
             if (isset($_POST['login']) && ($_POST['login'])) {
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
                 $checkuser = checkuser($user);
+
                 if ($checkuser) {
-                    if (password_verify($pass, $checkuser['pass'])) {
-                        $_SESSION['user_id'] = $checkuser['id'];
-                        header('Location: index.php?act=home');
+                    // Check if the user status is greater than or equal to 1
+                    if ($checkuser['status'] >= 1) {
+                        if (password_verify($pass, $checkuser['pass'])) {
+                            $_SESSION['user_id'] = $checkuser['id'];
+                            header('Location: index.php?act=home');
+                        } else {
+                            $msg = 'Sai tên đăng nhập hoặc mật khẩu!';
+                        }
                     } else {
-                        $msg = 'Sai tên đăng nhập hoặc mật khẩu!';
+                        $msg = 'Tài khoản đã bị khoá!';
                     }
                 } else {
                     $msg = 'Tài khoản không tồn tại!';
@@ -69,16 +75,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             include "view/login.php";
             break;
-            // case 'signup':
-            //     if (isset($_POST['signup']) && ($_POST['signup'])) {
-            //         $email = $_POST['email'];
-            //         $user = $_POST['user'];
-            //         $pass = $_POST['pass'];
-            //         $cpass = $_POST['cpass'];
-            //         insert_user($email, $user, $pass, $cpass);
-            //     }
-            //     include 'view/signup.php';
-            //     break;
 
         case 'signup':
             if (isset($_POST['signup']) && ($_POST['signup'])) {
@@ -156,26 +152,26 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'productdetail':
             include 'view/header.php';
-            if(isset($_GET['id'])&&($_GET['id']>0)){
-                $id=$_GET['id'];  
-                $oneproduct=load_one_products($id);
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $oneproduct = load_one_products($id);
                 extract($oneproduct);
-                $relatedpro=load_product_related($id,$categories_id);
-            include "view/product-single.php";
-            }else{
+                $relatedpro = load_product_related($id, $categories_id);
+                include "view/product-single.php";
+            } else {
                 include "view/home.php";
             }
             include 'view/footer.php';
             break;
-        case'booking':
+        case 'booking':
             if (isset($_POST['order']) && ($_POST['order'])) {
                 $name = $_POST['full_name'];
                 $tel = $_POST['phone_number'];
-                $email=$_POST['email'];
-                $date=$_POST['booking_date'];
+                $email = $_POST['email'];
+                $date = $_POST['booking_date'];
                 $customers = $_POST['number_of_people'];
-                $note=$_POST['note'];
-                booking( $name, $tel, $email, $date, $customers, $note);
+                $note = $_POST['note'];
+                booking($name, $tel, $email, $date, $customers, $note);
                 echo '<script>alert("Đặt bàn thành công!, xin cảm ơn quý khách ")</script>';
                 echo '<script>
                         setTimeout(function() {
