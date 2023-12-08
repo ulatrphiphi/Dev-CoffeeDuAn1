@@ -87,7 +87,6 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
                             <th>Tên sản phẩm</th>
                             <th>Ảnh sản phẩm</th>
                             <th>Giá sản phẩm</th>
-                            <th>Mô tả</th>
                             <th>Thao tác</th>
                         </tr>
                     </thead>
@@ -109,7 +108,6 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
                     <td>' . $name . '</td>
                     <td>' . $img . '</td>
                     <td><strong>' . number_format($price, 0, ',', '.') . ' VNĐ</strong></td>
-                    <td>' . substr($detail, 0, 1000) . '...</td>
                     <td>
                       <a href="' . $editpro . '" class="btn btn-primary">Sửa</a>
                       <a href="' . $deletepro . '"><input type="button" class="btn btn-danger" value="Xóa"></a>
