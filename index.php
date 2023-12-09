@@ -179,15 +179,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                         }, 0);
                     </script>';
             }
+            $load_products_by_categories = load_products_by_categories($id, $categories_id);
             break;
 
-            case "mybill":
-                $listorder = load_all_order();
-                include "view/mybill.php";
-                break;
-            case "billcomfirm":
-                include "view/billcomfirm.php";
-                break;
+        case "mybill":
+            if (isset($_POST['id']) && ($_POST['id'])) {
+                $listorder = load_one_order($_GET['id']);
+            }
+            include "view/mybill.php";
+            break;
+        case "billcomfirm":
+            include "view/billcomfirm.php";
+            break;
         default:
             include 'view/header.php';
             include 'view/home.php';

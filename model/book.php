@@ -11,5 +11,18 @@
     $order = pdo_query($sql);
     return $order;
 }
+    function load_one_order()
+{
+    $order_id = $_SESSION['id'];
+    $sql = "select * from orders where id=" .$order_id;
+    $order = pdo_query($sql);
+    return $order;
+}
 
-?>
+function getOrder()
+{
+    $order = $_SESSION['id'];
+    $sql = "select * from orders WHERE id = $order";
+    $selectUser = pdo_query_one($sql);
+    return $selectUser;
+}

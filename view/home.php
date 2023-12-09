@@ -56,7 +56,6 @@
     </div>
   </div>
 </section>
-
 <section class="ftco-intro">
   <div class="container-wrap">
     <div class="wrap d-md-flex align-items-xl-end">
@@ -88,43 +87,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="book p-4">
-        <h3>Đặt Bàn</h3>
-        <form action="#" class="appointment-form">
-          <div class="d-md-flex">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Họ và Tên" />
-            </div>
-          </div>
-          <div class="d-md-flex">
-            <div class="form-group">
-              <div class="input-wrap">
-                <div class="icon">
-                  <span class="ion-md-calendar"></span>
-                </div>
-                <input type="text" class="form-control appointment_date" placeholder="Ngày" />
-              </div>
-            </div>
-            <div class="form-group ml-md-4">
-              <div class="input-wrap">
-                <div class="icon"><span class="ion-ios-clock"></span></div>
-                <input type="text" class="form-control appointment_time" placeholder="Thời Gian" />
-              </div>
-            </div>
-            <div class="form-group ml-md-4">
-              <input type="text" class="form-control" placeholder="Số Điện Thoại" />
-            </div>
-          </div>
-          <div class="d-md-flex">
-            <div class="form-group">
-              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Ghi Chú"></textarea>
-            </div>
-            <div class="form-group ml-md-4">
-              <input type="submit" value="Đặt Hẹn" class="btn btn-white py-3 px-4" />
-            </div>
-          </div>
-        </form>
-      </div> -->
     </div>
   </div>
 </section>
@@ -479,14 +441,15 @@
 
 <section class="ftco-appointment" id="book">
   <div class="overlay"></div>
-  <div class="container-wrap">
-    <div class="row no-gutters d-md-flex align-items-center">
-      <div class="col-md-6 d-flex align-self-stretch">
+  <form action="index.php?act=booking" method="POST" class="appointment-form">
+    <div class="container-wrap">
+      <div class="row no-gutters d-md-flex align-items-center">
+        <!-- <div class="col-md-6 d-flex align-self-stretch">
         <img src="/view/images/bg_1.jpg" alt="" width="100%">
-      </div>
-      <div class="col-md-6 appointment ftco-animate">
-        <h3 class="mb-3">Đặt bàn</h3>
-        <form action="index.php?act=booking" method="POST" class="appointment-form">
+      </div> -->
+        <div class="col-md-6 appointment ftco-animate">
+          <h3 class="mb-3">Đặt bàn</h3>
+
           <div class="d-md-flex">
             <div class="form-group">
               <input type="text" class="form-control" name="full_name" placeholder="Họ và tên" />
@@ -503,32 +466,11 @@
           <div class="d-md-flex">
             <div class="form-group">
               <div class="input-wrap">
-                <!-- <div class="icon">
-                  <span class="ion-md-calendar"></span>
-                </div> -->
+
                 <input type="datetime-local" class="form-control" name="booking_date" placeholder="Ngày" />
               </div>
             </div>
-            <!-- <div class="form-group ml-md-4">
-              <div class="input-wrap">
-                <div class="icon">
-                  <span class="ion-ios-clock"></span>
-                </div>
-                <select class="form-control" name="booking_time">
-                  <?php
-                  // $start_time = strtotime("08:00 AM"); // Giờ bắt đầu
-                  // $end_time = strtotime("08:00 PM"); // Giờ kết thúc
-                  // $interval = 30 * 60; // Cách nhau 30 phút
 
-                  // while ($start_time <= $end_time) {
-                  //   $formatted_time = date("h:i A", $start_time);
-                  //   echo '<option value="' . date("H:i", $start_time) . '">' . $formatted_time . '</option>';
-                  //   $start_time += $interval;
-                  // }
-                  ?>
-                </select>
-              </div>
-            </div> -->
             <div class="form-group ml-md-4">
               <select class="form-control" name="number_of_people">
                 <!-- Chọn số người từ 1 đến 10 -->
@@ -543,13 +485,44 @@
               <textarea name="note" cols="30" rows="2" class="form-control" placeholder="Ghi chú"></textarea>
             </div>
             <div class="form-group ml-md-4">
-              <input type="hidden" name="users_id" >
+              <input type="hidden" name="users_id">
               <input type="submit" value="Đặt Hẹn" name="order" class="btn btn-primary py-3 px-4" />
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+        <div class="col-md-6 appointment ftco-animate">
+          <div class="d-md-flex">
+            <div class="form-group">
+              <select class="form-control" name="number_of_people">
+                <!-- Chọn số người từ 1 đến 10 -->
+                <?php
+                foreach ($allproducts as $product) {
+                  extract($product);
+                  $img = 'admin/uploads/' . $img;
+                  echo '
+                <option value="' . $name . '">' . $name . '  <img src="' . $img . '" alt="" width="20px"></option>
+            
+            ';
+                  $i += 1;
+                }
+                ?>
 
-    </div>
+              </select>
+            </div>
+            <div class="form-group ml-md-4">
+              <select class="form-control" name="number_of_people">
+                <!-- Chọn số người từ 1 đến 10 -->
+                <?php for ($i = 1; $i <= 10; $i++) { ?>
+                  <option value="<?php echo $i; ?>"><?php echo $i; ?> Người</option>
+                <?php } ?>
+              </select>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+  </form>
+  </div>
   </div>
 </section>
