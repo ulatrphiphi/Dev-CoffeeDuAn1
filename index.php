@@ -139,7 +139,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $address = $_POST['address'];
                 $tel = $_POST['tel'];
                 $id = $_POST['id'];
-
                 update_user($id, $user, $pass, $email, $address, $tel);
                 $_SESSION['user'] = checkuser($user, $pass);
                 // echo '<script>alert("Cập nhật thành công")</script>';
@@ -173,13 +172,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $note = $_POST['note'];
                 booking($name, $tel, $email, $date, $customers, $note);
                 echo '<script>alert("Đặt bàn thành công!, xin cảm ơn quý khách ")</script>';
-                echo '<script>
+                echo"<script>
                         setTimeout(function() {
-                            window.location.href = "index.php?act=billcomfirm";
+                            window.location.href = 'index.php?act=billcomfirm';
                         }, 0);
-                    </script>';
+                    </script>";
             }
-            $load_products_by_categories = load_products_by_categories($id, $categories_id);
             break;
 
         case "mybill":
@@ -189,6 +187,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "view/mybill.php";
             break;
         case "billcomfirm":
+            if (isset($_POST['id']) && ($_POST['id'])) {
+                $listorder = load_one_order($_GET['id']);
+            }
             include "view/billcomfirm.php";
             break;
         default:

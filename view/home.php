@@ -438,18 +438,17 @@
     </div>
   </div>
 </section>
-
 <section class="ftco-appointment" id="book">
   <div class="overlay"></div>
-  <form action="index.php?act=booking" method="POST" class="appointment-form">
-    <div class="container-wrap">
-      <div class="row no-gutters d-md-flex align-items-center">
-        <!-- <div class="col-md-6 d-flex align-self-stretch">
+  <div class="container-wrap">
+    <div class="row no-gutters d-md-flex align-items-center">
+      <div class="col-md-6 d-flex align-self-stretch">
         <img src="/view/images/bg_1.jpg" alt="" width="100%">
-      </div> -->
-        <div class="col-md-6 appointment ftco-animate">
-          <h3 class="mb-3">Đặt bàn</h3>
+      </div>
+      <div class="col-md-6 appointment ftco-animate">
+        <h3 class="mb-3">Đặt bàn</h3>
 
+        <form action="index.php?act=booking" method="POST" class="appointment-form">
           <div class="d-md-flex">
             <div class="form-group">
               <input type="text" class="form-control" name="full_name" placeholder="Họ và tên" />
@@ -466,11 +465,9 @@
           <div class="d-md-flex">
             <div class="form-group">
               <div class="input-wrap">
-
                 <input type="datetime-local" class="form-control" name="booking_date" placeholder="Ngày" />
               </div>
             </div>
-
             <div class="form-group ml-md-4">
               <select class="form-control" name="number_of_people">
                 <!-- Chọn số người từ 1 đến 10 -->
@@ -489,40 +486,9 @@
               <input type="submit" value="Đặt Hẹn" name="order" class="btn btn-primary py-3 px-4" />
             </div>
           </div>
-        </div>
-        <div class="col-md-6 appointment ftco-animate">
-          <div class="d-md-flex">
-            <div class="form-group">
-              <select class="form-control" name="number_of_people">
-                <!-- Chọn số người từ 1 đến 10 -->
-                <?php
-                foreach ($allproducts as $product) {
-                  extract($product);
-                  $img = 'admin/uploads/' . $img;
-                  echo '
-                <option value="' . $name . '">' . $name . '  <img src="' . $img . '" alt="" width="20px"></option>
-            
-            ';
-                  $i += 1;
-                }
-                ?>
-
-              </select>
-            </div>
-            <div class="form-group ml-md-4">
-              <select class="form-control" name="number_of_people">
-                <!-- Chọn số người từ 1 đến 10 -->
-                <?php for ($i = 1; $i <= 10; $i++) { ?>
-                  <option value="<?php echo $i; ?>"><?php echo $i; ?> Người</option>
-                <?php } ?>
-              </select>
-            </div>
-
-          </div>
-        </div>
-
+        </form>
       </div>
-  </form>
-  </div>
+
+    </div>
   </div>
 </section>
