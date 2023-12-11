@@ -6,7 +6,6 @@
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
                         <input type="text" name="table_search" class="form-control float-right" placeholder="Tìm Kiếm">
-
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-default">
                                 <i class="fas fa-search"></i>
@@ -17,7 +16,6 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0" style="height: 300px;">
-
                 <table class="table table-head-fixed text-nowrap table-striped">
                     <thead>
                         <tr>
@@ -26,7 +24,6 @@
                             <th>Ngày đặt</th>
                             <th>Số người</th>
                             <th>Ghi chú</th>
-                            <th>Tổng tiền</th>
                             <th>Trạng thái</th>
                             <th>Thao tác</th>
                         </tr>
@@ -36,27 +33,36 @@
                         foreach ($listorder as $order) {
                             extract($order);
                             $editorder = "index.php?act=editorder&id=" . $id;
-                            if ($payment = 1) {
-                                echo '     <tr>    
-            <td>' . $id . '</td>
-            <td>' . $name . '<br></td>
-            <td>' . $date . '</td>
-            <td>' . $customers . '<br></td>
-            <td>' . $note . '</td>
-            <td>' . number_format($total, 0, ',', '.') . ' VNĐ<br></td>
-            <td>';
-
-                                if ($status == 1) {
-                                    echo 'Đang xử lý';
-                                } elseif ($status == 2) {
-                                    echo 'Đang giao hàng';
-                                } else {
-                                    echo $status;
-                                }
-
-                                echo '</td>
-            <td><a class="btn btn-primary" href="' . $editorder . '">Đổi trạng thái</a></td>
-        </tr>';
+                            if ($status == 1) {
+                                echo '<tr>    
+                                    <td>' . $id . '</td>
+                                    <td>' . $name . '</td>
+                                    <td>' . $date . '</td>
+                                    <td>' . $customers . '</td>
+                                    <td>' . $note . '</td>
+                                    <td>Đang xử lý</td>
+                                    <td><a class="btn btn-primary" href="' . $editorder . '">Đổi trạng thái</a></td>
+                                </tr>';
+                            } else if ($status == 2) {
+                                echo '<tr>    
+                                    <td>' . $id . '</td>
+                                    <td>' . $name . '</td>
+                                    <td>' . $date . '</td>
+                                    <td>' . $customers . '</td>
+                                    <td>' . $note . '</td> 
+                                    <td>Đã thanh toán</td>
+                                    <td><a class="btn btn-primary" href="' . $editorder . '">Đổi trạng thái</a></td>
+                                </tr>';
+                            } else {
+                                echo '<tr>    
+                                <td>' . $id . '</td>
+                                <td>' . $name . '</td>
+                                <td>' . $date . '</td>
+                                <td>' . $customers . '</td>
+                                <td>' . $note . '</td>
+                                <td>Đã hủy</td>
+                                <td><a class="btn btn-primary" href="' . $editorder . '">Đổi trạng thái</a></td>
+                            </tr>';
                             }
                         }
                         ?>

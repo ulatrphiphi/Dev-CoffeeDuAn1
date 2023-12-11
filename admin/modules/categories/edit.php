@@ -7,7 +7,7 @@
 
 <div class="card card-primary">
     <div class="card-header">
-        <h3 class="card-title"> Thêm Danh mục</h3>
+        <h3 class="card-title"> Chỉnh sửa danh mục</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->

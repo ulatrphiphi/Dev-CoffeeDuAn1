@@ -7,16 +7,20 @@
 
     function load_all_order()
 {
-    $sql = "select * from orders where status = 1 order by id desc";
+    $sql = "select * from orders order by id desc";
     $order = pdo_query($sql);
     return $order;
 }
-    function load_one_order()
+    function load_one_order($id)
 {
-    $order_id = $_SESSION['id'];
-    $sql = "select * from orders where id=" .$order_id;
-    $order = pdo_query($sql);
+    $sql = "select id,name,payment from orders where id= $id";
+    $order = pdo_query_one($sql);
     return $order;
+}
+function update_status($id,$status)
+{
+    $sql = "update orders set status = '" . $status . "' where id =" . $id;
+    pdo_execute($sql);
 }
 
 function getOrder()

@@ -90,7 +90,7 @@ include '../model/book.php';
                   } else {
                   }
                   // insert_products($iddm, $tensp, $giasp, $hinh, $mota);
-                  
+
                   // $thongbao = "Thêm thành công";
                 }
                 $list_categories = load_all_categories();
@@ -224,7 +224,7 @@ include '../model/book.php';
                 if (isset($_POST['update']) && ($_POST['update'])) {
                   $role = $_POST['role'];
                   $id = $_POST['id'];
-                  update_role($id,$role);
+                  update_role($id, $role);
                   $alert = "Cập nhật thành công!";
                 }
                 $listuser = loadall_user();
@@ -236,12 +236,24 @@ include '../model/book.php';
                 include "modules/order/list.php";
                 break;
               case "addorder":
-                include "modules/orders/add.php";
+                include "modules/order/add.php";
                 break;
               case "editorder":
-                include "modules/orders/edit.php";
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                  $order = load_one_order($_GET['id']);
+                }
+                include "modules/order/edit.php";
                 break;
-
+              case 'updateorder':
+                if (isset($_POST['update']) && ($_POST['update'])) {
+                  $status = $_POST['status'];
+                  $id = $_POST['id'];
+                  update_status($id, $status);
+                  $alert = "Cập nhật thành công!";
+                }
+                $listorder = load_all_order();
+                include 'modules/order/list.php';
+                break;
               case 'thongke':
                 $listthongke = load_all_thongke();
                 include "modules/thongke/list.php";
